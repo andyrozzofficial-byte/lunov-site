@@ -13,7 +13,26 @@
   --hero-hx: 0;
   --hero-hy: 0;
   --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
-  --section-y: clamp(5rem, 12vw, 8rem);
+  --section-y: clamp(4.75rem, 11vw, 8rem);
+}
+
+/* Vertical rhythm — responsive section padding */
+.lunov-section {
+  padding-block: var(--section-y);
+}
+
+/* Unified interactive surfaces */
+.lunov-card-premium {
+  transition-property: transform, box-shadow, border-color, background-color,
+    opacity;
+  transition-duration: 640ms;
+  transition-timing-function: var(--ease-out-expo);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lunov-card-premium:hover {
+    transition-duration: 680ms;
+  }
 }
 
 @theme inline {
@@ -133,7 +152,7 @@ body {
 /* Section reveal */
 .lunov-reveal {
   transition-property: opacity, transform;
-  transition-duration: 760ms;
+  transition-duration: 820ms;
   transition-timing-function: var(--ease-out-expo);
 }
 

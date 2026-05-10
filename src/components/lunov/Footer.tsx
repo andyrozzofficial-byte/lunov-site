@@ -1,20 +1,12 @@
 import Link from "next/link";
+import type { Locale } from "@/i18n/config";
+import type { Messages } from "@/i18n/types";
 import { SparkleIcon } from "./icons";
 
-const navLinks = [
-  { href: "#home", label: "Home" },
-  { href: "#services", label: "Services" },
-  { href: "#projects", label: "Projects" },
-  { href: "#about", label: "About us" },
-  { href: "#contact", label: "Contact" },
-];
-
-const serviceLinks = [
-  { href: "#services", label: "Websites & flagship products" },
-  { href: "#services", label: "Apps & realtime surfaces" },
-  { href: "#services", label: "AI-assisted workflows" },
-  { href: "#services", label: "Infrastructure & automation" },
-];
+type FooterProps = {
+  locale: Locale;
+  messages: Messages;
+};
 
 function SocialInstagram({ className }: { className?: string }) {
   return (
@@ -40,14 +32,33 @@ function SocialLinkedin({ className }: { className?: string }) {
   );
 }
 
-export function Footer() {
+export function Footer({ locale, messages }: FooterProps) {
+  const prefix = `/${locale}`;
+  const { footer, nav, services } = messages;
+
+  const navLinks = [
+    { href: `${prefix}#home`, label: nav.home },
+    { href: `${prefix}#services`, label: nav.services },
+    { href: `${prefix}#projects`, label: nav.projects },
+    { href: `${prefix}#about`, label: nav.about },
+    { href: `${prefix}#contact`, label: nav.contact },
+  ] as const;
+
+  const serviceLinks = services.items.map((item) => ({
+    href: `${prefix}#services`,
+    label: item.title,
+  }));
+
   return (
-    <footer className="relative border-t border-white/[0.045] bg-black px-4 pb-12 pt-16 sm:px-6 sm:pb-14 sm:pt-20 lg:px-8">
+    <footer className="relative border-t border-white/[0.045] bg-black px-4 pb-12 pt-[clamp(3.5rem,9vw,5rem)] sm:px-6 sm:pb-14 sm:pt-20 lg:px-8">
       <div className="pointer-events-none absolute inset-x-0 top-0 lunov-divider-top opacity-80" aria-hidden />
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-12 lg:gap-12">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
-            <Link href="#home" className="inline-flex items-start gap-1.5 outline-none transition-opacity duration-200 hover:opacity-90">
+            <Link
+              href={`${prefix}#home`}
+              className="inline-flex items-start gap-1.5 outline-none transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:opacity-90 motion-safe:hover:-translate-y-px"
+            >
               <div className="leading-none">
                 <span className="font-display flex items-center gap-1 text-lg font-bold tracking-[0.2em] text-white">
                   LUNO
@@ -56,31 +67,30 @@ export function Footer() {
                     <SparkleIcon className="absolute -right-3 top-0 size-3 text-lime" />
                   </span>
                 </span>
-                <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.28em] text-zinc-500">
-                  Scandinavian digital studio
+                <span className="mt-1 block max-w-[16rem] text-[9px] font-medium uppercase tracking-[0.26em] text-zinc-500 sm:max-w-none sm:text-[10px] sm:tracking-[0.28em]">
+                  {messages.brand.subtitle}
                 </span>
               </div>
             </Link>
-            <p className="mt-7 max-w-sm text-sm leading-[1.68] text-zinc-500">
-              Premium websites, apps, and backends — plus automation and
-              analytics layers that stay composed when traffic spikes.
+            <p className="mt-7 max-w-sm text-[13px] leading-[1.72] text-zinc-500 sm:text-sm sm:leading-[1.68]">
+              {footer.blurb}
             </p>
             <p className="mt-10 text-[11px] tracking-wide text-zinc-600">
-              © {new Date().getFullYear()} LUNOV Studio
+              © {new Date().getFullYear()} {footer.copyright}
             </p>
           </div>
 
-          <div className="grid gap-12 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-3 lg:gap-10">
+          <div className="grid gap-11 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-3 lg:gap-10">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-600">
-                Navigation
+                {footer.navigation}
               </p>
               <ul className="mt-6 space-y-3.5">
                 {navLinks.map((l) => (
                   <li key={l.href + l.label}>
                     <Link
                       href={l.href}
-                      className="text-sm text-zinc-400 transition-colors duration-200 ease-out hover:text-zinc-100"
+                      className="text-[13px] text-zinc-400 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-zinc-100 sm:text-sm"
                     >
                       {l.label}
                     </Link>
@@ -90,14 +100,14 @@ export function Footer() {
             </div>
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-600">
-                Services
+                {footer.services}
               </p>
               <ul className="mt-6 space-y-3.5">
                 {serviceLinks.map((l, i) => (
                   <li key={`${l.label}-${i}`}>
                     <Link
                       href={l.href}
-                      className="text-sm text-zinc-400 transition-colors duration-200 ease-out hover:text-zinc-100"
+                      className="text-[13px] text-zinc-400 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-zinc-100 sm:text-sm"
                     >
                       {l.label}
                     </Link>
@@ -107,14 +117,14 @@ export function Footer() {
             </div>
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-600">
-                Follow us
+                {footer.follow}
               </p>
               <div className="mt-6 flex gap-3">
                 <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex size-11 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.025] text-white transition-[border-color,background-color,transform] duration-300 ease-out hover:border-white/22 hover:bg-white/[0.055] motion-safe:hover:-translate-y-px"
+                  className="inline-flex size-11 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.025] text-white transition-[border-color,background-color,transform] duration-[640ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-white/22 hover:bg-white/[0.055] motion-safe:hover:-translate-y-px"
                   aria-label="Instagram"
                 >
                   <SocialInstagram className="size-5" />
@@ -123,7 +133,7 @@ export function Footer() {
                   href="https://youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex size-11 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.025] text-white transition-[border-color,background-color,transform] duration-300 ease-out hover:border-white/22 hover:bg-white/[0.055] motion-safe:hover:-translate-y-px"
+                  className="inline-flex size-11 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.025] text-white transition-[border-color,background-color,transform] duration-[640ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-white/22 hover:bg-white/[0.055] motion-safe:hover:-translate-y-px"
                   aria-label="YouTube"
                 >
                   <SocialYoutube className="size-5" />
@@ -132,7 +142,7 @@ export function Footer() {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex size-11 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.025] text-white transition-[border-color,background-color,transform] duration-300 ease-out hover:border-white/22 hover:bg-white/[0.055] motion-safe:hover:-translate-y-px"
+                  className="inline-flex size-11 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.025] text-white transition-[border-color,background-color,transform] duration-[640ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-white/22 hover:bg-white/[0.055] motion-safe:hover:-translate-y-px"
                   aria-label="LinkedIn"
                 >
                   <SocialLinkedin className="size-5" />
@@ -142,10 +152,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="relative mt-16 pt-10">
+        <div className="relative mt-14 pt-10 sm:mt-16">
           <div className="pointer-events-none absolute inset-x-0 top-0 lunov-divider-bottom opacity-70" aria-hidden />
           <p className="text-center text-[11px] leading-relaxed tracking-wide text-zinc-600 lg:text-right">
-            Calm interfaces. Serious pipelines.{" "}
+            {footer.closing}{" "}
             <span className="text-lime/90" aria-hidden>
               ♥
             </span>

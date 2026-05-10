@@ -1,3 +1,4 @@
+import { HtmlLang } from "@/components/HtmlLang";
 import type { Metadata } from "next";
 import { DM_Sans, Syne } from "next/font/google";
 import "./globals.css";
@@ -19,14 +20,9 @@ const lunovBody = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "LUNOV — Premium digital experiences & systems",
-  description:
-    "Scandinavian studio building flagship websites, apps, AI-assisted workflows, automation, realtime analytics, and infrastructure — including selective work in audio and artist platforms.",
-  openGraph: {
-    title: "LUNOV — Premium digital experiences & systems",
-    description:
-      "Websites, apps, creative SaaS, dashboards, and dependable backends — crafted with restraint.",
-    type: "website",
+  title: {
+    default: "LUNOV",
+    template: "%s",
   },
 };
 
@@ -37,10 +33,12 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="sv"
+      suppressHydrationWarning
       className={`${lunovDisplay.variable} ${lunovBody.variable} h-full`}
     >
       <body className="relative isolate min-h-full bg-black font-sans text-white antialiased">
+        <HtmlLang />
         <div
           className="lunov-grain lunov-grain-animate pointer-events-none fixed inset-0 z-[1] mix-blend-overlay"
           aria-hidden

@@ -1,56 +1,53 @@
-export function About() {
+import type { Messages } from "@/i18n/types";
+
+type AboutProps = {
+  copy: Messages["about"];
+};
+
+export function About({ copy }: AboutProps) {
+  const stats = [
+    copy.stats.delivery,
+    copy.stats.focus,
+    copy.stats.surface,
+  ] as const;
+
   return (
     <section
       id="about"
-      className="relative scroll-mt-[calc(var(--header-h)+0.75rem)] border-t border-white/[0.055] bg-black px-4 py-24 sm:scroll-mt-28 sm:px-6 sm:py-28 lg:px-8 lg:py-32"
+      className="lunov-section relative scroll-mt-[calc(var(--header-h)+0.75rem)] border-t border-white/[0.055] bg-black px-4 sm:scroll-mt-28 sm:px-6 lg:px-8"
       aria-labelledby="about-heading"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-10 lg:grid-cols-12 lg:gap-14 lg:items-center">
+        <div className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-14">
           <div className="lg:col-span-5">
-            <p className="text-xs font-bold uppercase tracking-[0.35em] text-lime">
-              About us
+            <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-lime sm:text-xs sm:tracking-[0.35em]">
+              {copy.eyebrow}
             </p>
             <h2
               id="about-heading"
-              className="font-display mt-3 text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-4xl sm:leading-[1.1]"
+              className="font-display mt-3 text-[clamp(1.65rem,4vw,2.25rem)] font-bold leading-[1.12] tracking-tight text-white sm:leading-[1.1]"
             >
-              A Scandinavian studio for products people live in.
+              {copy.heading}
             </h2>
           </div>
           <div className="lg:col-span-7">
-            <p className="text-base leading-[1.68] text-zinc-400 sm:text-lg sm:leading-[1.65]">
-              LUNOV is intentionally small: senior designers and engineers
-              embedded with your team. We ship polished interfaces alongside the
-              APIs, automation, and observability that keep them honest —
-              whether that&apos;s a public launch, an internal admin panel, or a
-              specialised stack touching audio and artist platforms.
+            <p className="text-[15px] leading-[1.72] text-zinc-400 sm:text-lg sm:leading-[1.68]">
+              {copy.body}
             </p>
-            <dl className="mt-12 grid gap-5 sm:grid-cols-3 sm:gap-6">
-              <div className="rounded-2xl border border-white/[0.065] bg-surface/78 px-5 py-4 shadow-[0_2px_20px_-12px_rgba(0,0,0,0.4)] transition-[transform,box-shadow,border-color] duration-500 ease-out hover:border-white/[0.1] hover:bg-surface/90 hover:shadow-[0_24px_48px_-30px_rgba(0,0,0,0.62)] motion-safe:hover:-translate-y-0.5">
-                <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                  Delivery
-                </dt>
-                <dd className="font-display mt-2 text-2xl font-bold text-white">
-                  Phased releases
-                </dd>
-              </div>
-              <div className="rounded-2xl border border-white/[0.065] bg-surface/78 px-5 py-4 shadow-[0_2px_20px_-12px_rgba(0,0,0,0.4)] transition-[transform,box-shadow,border-color] duration-500 ease-out hover:border-white/[0.1] hover:bg-surface/90 hover:shadow-[0_24px_48px_-30px_rgba(0,0,0,0.62)] motion-safe:hover:-translate-y-0.5">
-                <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                  Focus
-                </dt>
-                <dd className="font-display mt-2 text-2xl font-bold text-white">
-                  Detail-led
-                </dd>
-              </div>
-              <div className="rounded-2xl border border-white/[0.065] bg-surface/78 px-5 py-4 shadow-[0_2px_20px_-12px_rgba(0,0,0,0.4)] transition-[transform,box-shadow,border-color] duration-500 ease-out hover:border-white/[0.1] hover:bg-surface/90 hover:shadow-[0_24px_48px_-30px_rgba(0,0,0,0.62)] motion-safe:hover:-translate-y-0.5">
-                <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">
-                  Surface
-                </dt>
-                <dd className="font-display mt-2 text-2xl font-bold text-white">
-                  Web & native
-                </dd>
-              </div>
+            <dl className="mt-10 grid gap-4 sm:grid-cols-3 sm:gap-5 lg:mt-12 lg:gap-6">
+              {stats.map((s) => (
+                <div
+                  key={s.label}
+                  className="lunov-card-premium rounded-2xl border border-white/[0.065] bg-surface/78 px-5 py-4 shadow-[0_2px_20px_-12px_rgba(0,0,0,0.4)] transition-[transform,box-shadow,border-color] duration-[640ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-white/[0.1] hover:bg-surface/90 hover:shadow-[0_24px_48px_-30px_rgba(0,0,0,0.62)] motion-safe:hover:-translate-y-0.5"
+                >
+                  <dt className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500 sm:text-xs">
+                    {s.label}
+                  </dt>
+                  <dd className="font-display mt-2 text-[clamp(1.35rem,3.5vw,1.5rem)] font-bold text-white">
+                    {s.value}
+                  </dd>
+                </div>
+              ))}
             </dl>
           </div>
         </div>
