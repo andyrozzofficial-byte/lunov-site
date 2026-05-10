@@ -6,12 +6,16 @@ const lunovDisplay = Syne({
   variable: "--font-lunov-display",
   subsets: ["latin"],
   weight: ["600", "700", "800"],
+  display: "swap",
+  adjustFontFallback: true,
 });
 
 const lunovBody = DM_Sans({
   variable: "--font-lunov-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -36,9 +40,9 @@ export default function RootLayout({
       lang="en"
       className={`${lunovDisplay.variable} ${lunovBody.variable} h-full`}
     >
-      <body className="relative isolate min-h-full bg-black font-sans antialiased text-white">
+      <body className="relative isolate min-h-full bg-black font-sans text-white antialiased">
         <div
-          className="lunov-grain pointer-events-none fixed inset-0 z-[1] opacity-[0.038] mix-blend-overlay"
+          className="lunov-grain lunov-grain-animate pointer-events-none fixed inset-0 z-[1] mix-blend-overlay"
           aria-hidden
         />
         <div

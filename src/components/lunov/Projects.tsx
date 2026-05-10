@@ -32,77 +32,81 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="relative scroll-mt-[calc(var(--header-h)+0.75rem)] border-t border-white/[0.06] bg-surface px-4 py-20 sm:scroll-mt-28 sm:px-6 sm:py-24 lg:px-8"
+      className="relative scroll-mt-[calc(var(--header-h)+0.75rem)] border-t border-white/[0.055] bg-surface px-4 py-24 sm:scroll-mt-28 sm:px-6 sm:py-28 lg:px-8 lg:py-32"
       aria-labelledby="projects-heading"
     >
       <div className="mx-auto max-w-7xl">
-        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-7 sm:flex-row sm:items-end sm:justify-between sm:gap-8">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-lime">
               Featured projects
             </p>
             <h2
               id="projects-heading"
-              className="font-display mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl"
+              className="font-display mt-3 text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-4xl sm:leading-[1.1]"
             >
               Some things we&apos;re proud of.
             </h2>
           </div>
           <Link
             href="#contact"
-            className="group inline-flex items-center gap-2 self-start text-xs font-bold uppercase tracking-[0.22em] text-lime transition duration-300 ease-out hover:text-white sm:self-auto"
+            className="group/link inline-flex items-center gap-2 self-start text-xs font-bold uppercase tracking-[0.22em] text-lime transition-colors duration-300 ease-out hover:text-white sm:self-auto"
           >
             View all projects
-            <ArrowRightIcon className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5" />
+            <ArrowRightIcon className="size-4 transition-transform duration-500 ease-out group-hover/link:translate-x-1 group-hover/link:text-lime/90" />
           </Link>
         </div>
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-3">
+        <div className="mt-16 grid gap-6 lg:grid-cols-3 lg:gap-7">
           {projects.map((p) => (
             <article
               key={p.title}
-              className="group overflow-hidden rounded-2xl border border-white/[0.08] bg-black shadow-black/30 transition duration-300 ease-out hover:border-white/[0.16] hover:shadow-[0_28px_56px_-30px_rgba(212,255,63,0.08)] motion-safe:hover:-translate-y-0.5"
+              className="group relative overflow-hidden rounded-2xl border border-white/[0.065] bg-black shadow-[0_4px_28px_-14px_rgba(0,0,0,0.55)] transition-[transform,box-shadow,border-color] duration-500 ease-out before:pointer-events-none before:absolute before:inset-0 before:z-[2] before:rounded-2xl before:opacity-0 before:shadow-[inset_0_0_0_1px_rgba(212,255,63,0)] before:transition-opacity before:duration-500 hover:border-white/[0.11] hover:shadow-[0_32px_64px_-36px_rgba(212,255,63,0.14),0_24px_48px_-28px_rgba(0,0,0,0.65)] motion-safe:hover:-translate-y-1 hover:before:opacity-100 hover:before:shadow-[inset_0_0_0_1px_rgba(212,255,63,0.09)]"
             >
               <Link
                 href="#contact"
-                className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+                className="relative z-[1] block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime/90 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               >
-                <div
-                  className={`relative aspect-[16/10] overflow-hidden bg-gradient-to-br transition-transform duration-500 ease-out motion-safe:group-hover:scale-[1.012] ${p.gradient}`}
-                >
+                <div className="relative overflow-hidden">
                   <div
-                    className={`absolute inset-0 transition group-hover:opacity-100 ${p.overlayClass}`}
-                    aria-hidden
-                  />
-                  <div
-                    className="absolute inset-0 opacity-[0.07]"
-                    style={{
-                      backgroundImage:
-                        "linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px)",
-                      backgroundSize: "32px 32px",
-                    }}
-                    aria-hidden
-                  />
-                  <div className="absolute inset-x-6 bottom-6 rounded-xl border border-white/10 bg-black/40 p-4 backdrop-blur-md">
-                    <div className="flex items-center justify-between gap-3">
-                      <div className="h-2 flex-1 rounded-full bg-white/10">
-                        <div className="h-full w-2/5 rounded-full bg-lime/90" />
+                    className={`relative aspect-[16/10] origin-center bg-gradient-to-br transition-[transform] duration-700 ease-out motion-safe:group-hover:scale-[1.035] ${p.gradient}`}
+                  >
+                    <div
+                      className={`absolute inset-0 transition-opacity duration-700 ease-out group-hover:opacity-100 ${p.overlayClass}`}
+                      aria-hidden
+                    />
+                    <div
+                      className="absolute inset-0 opacity-[0.065]"
+                      style={{
+                        backgroundImage:
+                          "linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px)",
+                        backgroundSize: "32px 32px",
+                      }}
+                      aria-hidden
+                    />
+                    <div className="absolute inset-x-6 bottom-6 rounded-xl border border-white/[0.085] bg-black/38 p-4 shadow-inner backdrop-blur-md">
+                      <div className="flex items-center justify-between gap-3">
+                        <div className="h-2 flex-1 rounded-full bg-white/[0.09]">
+                          <div className="h-full w-2/5 rounded-full bg-lime/85 shadow-[0_0_14px_rgba(212,255,63,0.35)] transition-[width,filter] duration-700 ease-out group-hover:w-[48%] group-hover:brightness-105" />
+                        </div>
+                        <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">
+                          Live
+                        </span>
                       </div>
-                      <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">
-                        Live
-                      </span>
                     </div>
                   </div>
                 </div>
-                <div className="flex items-start justify-between gap-4 p-6">
-                  <div>
-                    <h3 className="font-display text-lg font-semibold text-white">
+                <div className="flex items-start justify-between gap-4 p-6 sm:p-7">
+                  <div className="min-w-0">
+                    <h3 className="font-display text-lg font-semibold leading-snug text-white">
                       {p.title}
                     </h3>
-                    <p className="mt-2 text-sm text-zinc-400">{p.description}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+                      {p.description}
+                    </p>
                   </div>
-                  <span className="mt-1 inline-flex rounded-full border border-lime/25 bg-lime/10 p-2 text-lime shadow-[0_0_16px_-8px_rgba(212,255,63,0.25)] transition duration-300 ease-out group-hover:border-lime/35 group-hover:bg-lime/14">
-                    <ArrowRightIcon className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5" />
+                  <span className="mt-1 inline-flex shrink-0 rounded-full border border-lime/22 bg-lime/[0.09] p-2 text-lime shadow-[0_0_22px_-10px_rgba(212,255,63,0.35)] transition-[border-color,background-color,transform,box-shadow] duration-500 ease-out group-hover:border-lime/32 group-hover:bg-lime/14 group-hover:shadow-[0_0_28px_-8px_rgba(212,255,63,0.42)] motion-safe:group-hover:scale-105">
+                    <ArrowRightIcon className="size-4 transition-transform duration-500 ease-out group-hover:translate-x-1 group-hover:-translate-y-px" />
                   </span>
                 </div>
               </Link>

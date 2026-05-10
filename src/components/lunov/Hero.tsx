@@ -89,7 +89,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,transparent_38%,rgba(0,0,0,0.38)_100%)]" />
       </div>
 
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pt-16 pb-24 sm:gap-12 sm:px-6 sm:pt-20 sm:pb-28 md:grid-cols-2 md:items-center md:gap-x-12 md:gap-y-10 md:pb-32 md:pt-24 lg:gap-x-14 lg:gap-y-12 lg:pb-36 lg:pt-28 lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pt-[4.25rem] pb-[6rem] sm:gap-11 sm:px-6 sm:pt-24 sm:pb-28 md:grid-cols-2 md:items-center md:gap-x-11 md:gap-y-10 md:pb-[7.5rem] md:pt-28 lg:gap-x-14 lg:gap-y-11 lg:pb-[8.25rem] lg:pt-[7.5rem] lg:px-8">
         <div className="max-w-xl md:min-w-0">
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-lime sm:mb-4">
             Web. Design. Systems.
@@ -101,7 +101,7 @@ export function Hero() {
             Digital experiences built to{" "}
             <span className="text-lime">perform.</span>
           </h1>
-          <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-zinc-400 sm:mt-6 sm:text-lg">
+          <p className="mt-5 max-w-[52ch] text-base leading-[1.68] text-zinc-400 sm:mt-6 sm:text-lg sm:leading-[1.65]">
             We partner with ambitious teams to ship fast, accessible interfaces
             and resilient foundations — from brand-critical marketing sites to
             product surfaces your users rely on every day.
@@ -110,7 +110,7 @@ export function Hero() {
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="#services"
-              className="lunov-btn-primary group inline-flex items-center justify-center gap-2 rounded-full bg-lime px-7 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-black shadow-[0_0_40px_-10px_rgba(212,255,63,0.55)] transition duration-300 ease-out hover:shadow-[0_0_52px_-8px_rgba(212,255,63,0.62)] active:scale-[0.98] motion-safe:hover:-translate-y-px"
+              className="lunov-btn-primary group inline-flex items-center justify-center gap-2 rounded-full bg-lime px-7 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-black shadow-[0_0_48px_-14px_rgba(212,255,63,0.42)] transition-[transform,box-shadow] duration-500 ease-out hover:shadow-[0_0_56px_-10px_rgba(212,255,63,0.48)] motion-safe:hover:-translate-y-px"
             >
               <span className="inline-flex items-center gap-2">
                 Our services
@@ -119,7 +119,7 @@ export function Hero() {
             </Link>
             <Link
               href="#projects"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white transition duration-300 ease-out hover:border-white/40 hover:bg-white/[0.06] hover:shadow-[0_0_24px_-12px_rgba(255,255,255,0.12)] active:scale-[0.98] motion-safe:hover:-translate-y-px"
+              className="inline-flex items-center justify-center rounded-full border border-white/[0.18] px-7 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white transition-[border-color,background-color,box-shadow,transform] duration-500 ease-out hover:border-white/30 hover:bg-white/[0.055] hover:shadow-[0_0_32px_-18px_rgba(255,255,255,0.09)] motion-safe:hover:-translate-y-px"
             >
               View projects
             </Link>

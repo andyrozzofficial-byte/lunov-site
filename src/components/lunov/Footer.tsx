@@ -42,11 +42,12 @@ function SocialLinkedin({ className }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] bg-black px-4 pb-10 pt-14 sm:px-6 lg:px-8">
+    <footer className="relative border-t border-white/[0.045] bg-black px-4 pb-12 pt-16 sm:px-6 sm:pb-14 sm:pt-20 lg:px-8">
+      <div className="pointer-events-none absolute inset-x-0 top-0 lunov-divider-top opacity-80" aria-hidden />
       <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-10">
+        <div className="grid gap-14 md:grid-cols-2 lg:grid-cols-12 lg:gap-12">
           <div className="lg:col-span-4">
-            <Link href="#home" className="inline-flex items-start gap-1.5">
+            <Link href="#home" className="inline-flex items-start gap-1.5 outline-none transition-opacity duration-200 hover:opacity-90">
               <div className="leading-none">
                 <span className="font-display flex items-center gap-1 text-lg font-bold tracking-[0.2em] text-white">
                   LUNO
@@ -60,27 +61,26 @@ export function Footer() {
                 </span>
               </div>
             </Link>
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-zinc-400">
+            <p className="mt-7 max-w-sm text-sm leading-[1.68] text-zinc-500">
               Precision-built websites and product interfaces — engineered for
               clarity, speed, and longevity.
             </p>
-            <p className="mt-8 text-xs text-zinc-600">
-              © {new Date().getFullYear()} LUNOV Digital Studio. All rights
-              reserved.
+            <p className="mt-10 text-[11px] tracking-wide text-zinc-600">
+              © {new Date().getFullYear()} LUNOV Digital Studio
             </p>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-3">
+          <div className="grid gap-12 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-3 lg:gap-10">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-600">
                 Navigation
               </p>
-              <ul className="mt-5 space-y-3">
+              <ul className="mt-6 space-y-3.5">
                 {navLinks.map((l) => (
                   <li key={l.href + l.label}>
                     <Link
                       href={l.href}
-                      className="text-sm text-zinc-400 transition-colors duration-200 ease-out hover:text-white"
+                      className="text-sm text-zinc-400 transition-colors duration-200 ease-out hover:text-zinc-100"
                     >
                       {l.label}
                     </Link>
@@ -89,15 +89,15 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-600">
                 Services
               </p>
-              <ul className="mt-5 space-y-3">
+              <ul className="mt-6 space-y-3.5">
                 {serviceLinks.map((l, i) => (
                   <li key={`${l.label}-${i}`}>
                     <Link
                       href={l.href}
-                      className="text-sm text-zinc-400 transition-colors duration-200 ease-out hover:text-white"
+                      className="text-sm text-zinc-400 transition-colors duration-200 ease-out hover:text-zinc-100"
                     >
                       {l.label}
                     </Link>
@@ -106,15 +106,15 @@ export function Footer() {
               </ul>
             </div>
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-zinc-500">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-600">
                 Follow us
               </p>
-              <div className="mt-5 flex gap-3">
+              <div className="mt-6 flex gap-3">
                 <a
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex size-11 items-center justify-center rounded-lg border border-white/15 bg-white/[0.03] text-white transition-[border-color,background-color,transform] duration-300 ease-out hover:border-white/28 hover:bg-white/[0.06] motion-safe:hover:-translate-y-px"
+                  className="inline-flex size-11 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.025] text-white transition-[border-color,background-color,transform] duration-300 ease-out hover:border-white/22 hover:bg-white/[0.055] motion-safe:hover:-translate-y-px"
                   aria-label="Instagram"
                 >
                   <SocialInstagram className="size-5" />
@@ -123,7 +123,7 @@ export function Footer() {
                   href="https://youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex size-11 items-center justify-center rounded-lg border border-white/15 bg-white/[0.03] text-white transition-[border-color,background-color,transform] duration-300 ease-out hover:border-white/28 hover:bg-white/[0.06] motion-safe:hover:-translate-y-px"
+                  className="inline-flex size-11 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.025] text-white transition-[border-color,background-color,transform] duration-300 ease-out hover:border-white/22 hover:bg-white/[0.055] motion-safe:hover:-translate-y-px"
                   aria-label="YouTube"
                 >
                   <SocialYoutube className="size-5" />
@@ -132,7 +132,7 @@ export function Footer() {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex size-11 items-center justify-center rounded-lg border border-white/15 bg-white/[0.03] text-white transition-[border-color,background-color,transform] duration-300 ease-out hover:border-white/28 hover:bg-white/[0.06] motion-safe:hover:-translate-y-px"
+                  className="inline-flex size-11 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.025] text-white transition-[border-color,background-color,transform] duration-300 ease-out hover:border-white/22 hover:bg-white/[0.055] motion-safe:hover:-translate-y-px"
                   aria-label="LinkedIn"
                 >
                   <SocialLinkedin className="size-5" />
@@ -142,10 +142,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex justify-end border-t border-white/[0.06] pt-8">
-          <p className="text-xs text-zinc-500">
-            Designed with passion. Built to perform.{" "}
-            <span className="text-lime" aria-hidden>
+        <div className="relative mt-16 pt-10">
+          <div className="pointer-events-none absolute inset-x-0 top-0 lunov-divider-bottom opacity-70" aria-hidden />
+          <p className="text-center text-[11px] leading-relaxed tracking-wide text-zinc-600 lg:text-right">
+            Designed with restraint. Built to perform.{" "}
+            <span className="text-lime/90" aria-hidden>
               ♥
             </span>
           </p>

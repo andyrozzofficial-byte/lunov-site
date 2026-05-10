@@ -48,7 +48,7 @@ export function Reveal({ children, delayMs = 0, className }: RevealProps) {
       ref={ref}
       className={[
         "lunov-reveal will-change-[opacity,transform]",
-        shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5",
+        shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
         className ?? "",
       ]
         .filter(Boolean)
