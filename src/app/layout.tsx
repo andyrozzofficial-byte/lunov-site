@@ -36,8 +36,16 @@ export default function RootLayout({
       lang="en"
       className={`${lunovDisplay.variable} ${lunovBody.variable} h-full`}
     >
-      <body className="min-h-full bg-black font-sans antialiased text-white">
-        {children}
+      <body className="relative isolate min-h-full bg-black font-sans antialiased text-white">
+        <div
+          className="lunov-grain pointer-events-none fixed inset-0 z-[1] opacity-[0.038] mix-blend-overlay"
+          aria-hidden
+        />
+        <div
+          className="pointer-events-none fixed inset-0 z-[2] bg-[radial-gradient(ellipse_100%_70%_at_50%_-18%,rgba(212,255,63,0.035),transparent_52%),radial-gradient(ellipse_70%_50%_at_100%_60%,rgba(255,255,255,0.025),transparent_55%)]"
+          aria-hidden
+        />
+        <div className="relative z-[3]">{children}</div>
       </body>
     </html>
   );

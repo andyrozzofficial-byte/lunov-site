@@ -29,10 +29,10 @@ export function Process() {
   return (
     <section
       id="process"
-      className="relative border-t border-white/[0.06] bg-black py-20 sm:py-24"
+      className="relative scroll-mt-[calc(var(--header-h)+0.75rem)] border-t border-white/[0.06] bg-black px-4 py-20 sm:scroll-mt-28 sm:px-6 sm:py-24 lg:px-8"
       aria-labelledby="process-heading"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <p className="text-xs font-bold uppercase tracking-[0.35em] text-lime">
             Our process
@@ -53,7 +53,7 @@ export function Process() {
                   <div
                     className={`h-px flex-1 bg-gradient-to-r ${i === 0 ? "from-transparent to-zinc-700" : "from-zinc-700 to-zinc-700"}`}
                   />
-                  <div className="relative mx-3 flex size-12 shrink-0 items-center justify-center rounded-full bg-lime text-sm font-bold text-black shadow-[0_0_24px_-6px_rgba(212,255,63,0.65)]">
+                  <div className="relative mx-3 flex size-12 shrink-0 items-center justify-center rounded-full bg-lime text-sm font-bold text-black shadow-[0_0_24px_-6px_rgba(212,255,63,0.65)] transition duration-300 ease-out hover:shadow-[0_0_28px_-4px_rgba(212,255,63,0.5)] motion-safe:hover:scale-[1.04]">
                     {step.n}
                   </div>
                   <div

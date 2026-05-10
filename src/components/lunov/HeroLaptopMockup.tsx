@@ -7,9 +7,9 @@ export function HeroLaptopMockup() {
       <div className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-[radial-gradient(closest-side,rgba(212,255,63,0.16),transparent_72%)] blur-2xl sm:-inset-8" />
 
       <div className="relative max-sm:mx-auto max-sm:w-[min(100%,380px)] sm:w-full md:[perspective:1400px] md:[perspective-origin:55%_38%]">
-        <div className="relative md:-translate-y-1 md:rotate-x-[5deg] md:rotate-y-[-9deg] md:transform-gpu md:transition-transform md:duration-500 md:hover:rotate-x-[3deg] md:hover:rotate-y-[-6deg]">
+        <div className="relative md:-translate-y-1 md:rotate-x-[5deg] md:rotate-y-[-9deg] md:transform-gpu md:transition-[transform,filter] md:duration-500 md:ease-out md:hover:rotate-x-[3deg] md:hover:rotate-y-[-6deg] md:hover:drop-shadow-[0_28px_56px_rgba(212,255,63,0.07)]">
           {/* Screen / lid */}
-          <div className="rounded-[1.25rem] border border-zinc-600/75 bg-gradient-to-b from-zinc-600/95 via-zinc-900 to-zinc-950 p-2 shadow-[0_32px_70px_-22px_rgba(0,0,0,0.88),0_0_0_1px_rgba(255,255,255,0.07)_inset] ring-1 ring-black/45 sm:rounded-[1.35rem] sm:p-[11px]">
+          <div className="rounded-[1.25rem] border border-zinc-600/75 bg-gradient-to-b from-zinc-600/95 via-zinc-900 to-zinc-950 p-2 shadow-[0_32px_70px_-22px_rgba(0,0,0,0.88),0_0_0_1px_rgba(255,255,255,0.07)_inset] ring-1 ring-black/45 transition-[box-shadow,border-color] duration-500 ease-out md:hover:shadow-[0_36px_80px_-22px_rgba(0,0,0,0.9),0_0_42px_-24px_rgba(212,255,63,0.06)] sm:rounded-[1.35rem] sm:p-[11px]">
             <div className="overflow-hidden rounded-[10px] bg-black ring-1 ring-white/[0.08] sm:rounded-xl">
               {/* Dashboard */}
               <div className="relative flex aspect-[16/11] max-sm:aspect-[4/3] flex-col bg-gradient-to-br from-[#080809] via-[#050506] to-black sm:aspect-[16/10]">
@@ -34,14 +34,20 @@ export function HeroLaptopMockup() {
                       <span className="size-2 rounded-full bg-[#28c840]/90 shadow-[0_0_6px_rgba(40,200,64,0.35)] sm:size-2.5" />
                     </div>
                     <div className="flex h-6 min-w-0 flex-1 items-center gap-2 rounded-md bg-zinc-900/85 px-2 ring-1 ring-white/[0.07] sm:h-7 sm:rounded-lg sm:px-2.5">
-                      <span className="size-1 shrink-0 rounded-sm bg-lime/70 shadow-[0_0_6px_rgba(212,255,63,0.4)]" />
+                      <span
+                        className="lunov-soft-pulse size-1 shrink-0 rounded-sm bg-lime/70 shadow-[0_0_6px_rgba(212,255,63,0.4)]"
+                        style={{ animationDelay: "0.4s" }}
+                      />
                       <div className="h-1.5 flex-1 rounded-full bg-gradient-to-r from-zinc-700/90 via-zinc-600/60 to-zinc-700/90 opacity-80" />
                       <span className="hidden text-[8px] font-medium uppercase tracking-[0.18em] text-zinc-600 sm:inline">
                         Secure
                       </span>
                     </div>
                     <div className="flex size-8 shrink-0 items-center justify-center rounded-md bg-lime/12 ring-1 ring-lime/28 sm:size-9 sm:rounded-lg">
-                      <span className="size-1.5 rounded-full bg-lime shadow-[0_0_12px_rgba(212,255,63,0.65)] sm:size-2" />
+                      <span
+                        className="lunov-soft-pulse size-1.5 rounded-full bg-lime shadow-[0_0_12px_rgba(212,255,63,0.65)] sm:size-2"
+                        style={{ animationDelay: "1.1s" }}
+                      />
                     </div>
                   </div>
 
@@ -59,7 +65,10 @@ export function HeroLaptopMockup() {
                     </div>
                     <div className="flex items-center gap-2 text-[7px] tabular-nums text-zinc-600 sm:text-[8px]">
                       <span className="flex items-center gap-1">
-                        <span className="size-1 rounded-full bg-lime shadow-[0_0_6px_rgba(212,255,63,0.5)]" />
+                        <span
+                          className="lunov-soft-pulse size-1 rounded-full bg-lime shadow-[0_0_6px_rgba(212,255,63,0.5)]"
+                          style={{ animationDelay: "0.2s" }}
+                        />
                         Live
                       </span>
                       <span className="hidden text-zinc-700 sm:inline">|</span>
@@ -91,7 +100,7 @@ export function HeroLaptopMockup() {
                             Sessions
                           </div>
                           <div className="font-display mt-0.5 flex items-baseline justify-between gap-2 tabular-nums sm:mt-1">
-                            <span className="text-sm font-bold text-lime sm:text-base">
+                            <span className="text-sm font-bold text-lime tabular-nums sm:text-base">
                               12.4k
                             </span>
                             <span className="text-[9px] font-semibold text-lime/90">
@@ -157,8 +166,11 @@ export function HeroLaptopMockup() {
                             style={{ height: `${Math.max(16, h * 0.26)}px` }}
                           >
                             <div
-                              className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-lime/55 via-lime/15 to-transparent"
-                              style={{ height: `${Math.min(100, h)}%` }}
+                              className="lunov-dash-breathe absolute inset-x-0 bottom-0 bg-gradient-to-t from-lime/55 via-lime/15 to-transparent"
+                              style={{
+                                height: `${Math.min(100, h)}%`,
+                                animationDelay: `${i * 0.42}s`,
+                              }}
                             />
                           </div>
                         ))}
@@ -222,9 +234,10 @@ export function HeroLaptopMockup() {
                               (v, i) => (
                                 <div
                                   key={i}
-                                  className="flex-1 rounded-t-[3px] bg-gradient-to-t from-lime/88 via-lime/38 to-lime/12 shadow-[0_-6px_16px_-8px_rgba(212,255,63,0.35)] ring-1 ring-lime/18"
+                                  className="lunov-dash-breathe flex-1 rounded-t-[3px] bg-gradient-to-t from-lime/88 via-lime/38 to-lime/12 shadow-[0_-6px_16px_-8px_rgba(212,255,63,0.35)] ring-1 ring-lime/18"
                                   style={{
                                     height: `${Math.max(22, v * 0.62)}%`,
+                                    animationDelay: `${i * 0.28}s`,
                                   }}
                                 />
                               ),
@@ -255,7 +268,10 @@ export function HeroLaptopMockup() {
                             </div>
                             <div className="mt-1.5 h-1.5 rounded-full bg-zinc-800 sm:mt-2">
                               <div
-                                className={`h-full rounded-full bg-gradient-to-r from-lime/95 to-lime/70 shadow-[0_0_10px_rgba(212,255,63,0.38)] ${row.w}`}
+                                className={`lunov-progress-glow h-full rounded-full bg-gradient-to-r from-lime/95 to-lime/70 shadow-[0_0_10px_rgba(212,255,63,0.38)] ${row.w}`}
+                                style={{
+                                  animationDelay: `${row.label === "API" ? 0 : row.label === "CDN" ? 0.6 : 1.2}s`,
+                                }}
                               />
                             </div>
                           </div>
@@ -265,7 +281,7 @@ export function HeroLaptopMockup() {
                       <div className="flex shrink-0 items-center justify-between gap-2 rounded-md border border-white/[0.06] bg-black/55 px-2 py-1.5 ring-1 ring-white/[0.04]">
                         <div className="flex items-center gap-2">
                           <span className="relative flex size-4 items-center justify-center rounded-md bg-lime/12 ring-1 ring-lime/22">
-                            <span className="absolute size-1.5 rounded-full bg-lime opacity-90 shadow-[0_0_8px_rgba(212,255,63,0.55)]" />
+                            <span className="lunov-soft-pulse absolute size-1.5 rounded-full bg-lime opacity-90 shadow-[0_0_8px_rgba(212,255,63,0.55)]" />
                           </span>
                           <span className="text-[8px] font-medium text-zinc-400">
                             All systems nominal

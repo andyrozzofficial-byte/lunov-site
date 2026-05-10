@@ -42,8 +42,8 @@ function SocialLinkedin({ className }: { className?: string }) {
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/[0.06] bg-black pb-10 pt-14">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer className="border-t border-white/[0.06] bg-black px-4 pb-10 pt-14 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-4">
             <Link href="#home" className="inline-flex items-start gap-1.5">
@@ -80,7 +80,7 @@ export function Footer() {
                   <li key={l.href + l.label}>
                     <Link
                       href={l.href}
-                      className="text-sm text-zinc-400 transition hover:text-white"
+                      className="text-sm text-zinc-400 transition-colors duration-200 ease-out hover:text-white"
                     >
                       {l.label}
                     </Link>
@@ -97,7 +97,7 @@ export function Footer() {
                   <li key={`${l.label}-${i}`}>
                     <Link
                       href={l.href}
-                      className="text-sm text-zinc-400 transition hover:text-white"
+                      className="text-sm text-zinc-400 transition-colors duration-200 ease-out hover:text-white"
                     >
                       {l.label}
                     </Link>
@@ -114,7 +114,7 @@ export function Footer() {
                   href="https://instagram.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex size-11 items-center justify-center rounded-lg border border-white/15 bg-white/[0.03] text-white transition hover:border-white/30 hover:bg-white/[0.06]"
+                  className="inline-flex size-11 items-center justify-center rounded-lg border border-white/15 bg-white/[0.03] text-white transition-[border-color,background-color,transform] duration-300 ease-out hover:border-white/28 hover:bg-white/[0.06] motion-safe:hover:-translate-y-px"
                   aria-label="Instagram"
                 >
                   <SocialInstagram className="size-5" />
@@ -123,7 +123,7 @@ export function Footer() {
                   href="https://youtube.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex size-11 items-center justify-center rounded-lg border border-white/15 bg-white/[0.03] text-white transition hover:border-white/30 hover:bg-white/[0.06]"
+                  className="inline-flex size-11 items-center justify-center rounded-lg border border-white/15 bg-white/[0.03] text-white transition-[border-color,background-color,transform] duration-300 ease-out hover:border-white/28 hover:bg-white/[0.06] motion-safe:hover:-translate-y-px"
                   aria-label="YouTube"
                 >
                   <SocialYoutube className="size-5" />
@@ -132,7 +132,7 @@ export function Footer() {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex size-11 items-center justify-center rounded-lg border border-white/15 bg-white/[0.03] text-white transition hover:border-white/30 hover:bg-white/[0.06]"
+                  className="inline-flex size-11 items-center justify-center rounded-lg border border-white/15 bg-white/[0.03] text-white transition-[border-color,background-color,transform] duration-300 ease-out hover:border-white/28 hover:bg-white/[0.06] motion-safe:hover:-translate-y-px"
                   aria-label="LinkedIn"
                 >
                   <SocialLinkedin className="size-5" />

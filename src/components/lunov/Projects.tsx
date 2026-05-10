@@ -32,10 +32,10 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="relative border-t border-white/[0.06] bg-surface py-20 sm:py-24"
+      className="relative scroll-mt-[calc(var(--header-h)+0.75rem)] border-t border-white/[0.06] bg-surface px-4 py-20 sm:scroll-mt-28 sm:px-6 sm:py-24 lg:px-8"
       aria-labelledby="projects-heading"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p className="text-xs font-bold uppercase tracking-[0.35em] text-lime">
@@ -50,10 +50,10 @@ export function Projects() {
           </div>
           <Link
             href="#contact"
-            className="inline-flex items-center gap-2 self-start text-xs font-bold uppercase tracking-[0.22em] text-lime transition hover:text-white sm:self-auto"
+            className="group inline-flex items-center gap-2 self-start text-xs font-bold uppercase tracking-[0.22em] text-lime transition duration-300 ease-out hover:text-white sm:self-auto"
           >
             View all projects
-            <ArrowRightIcon className="size-4" />
+            <ArrowRightIcon className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5" />
           </Link>
         </div>
 
@@ -61,14 +61,14 @@ export function Projects() {
           {projects.map((p) => (
             <article
               key={p.title}
-              className="group overflow-hidden rounded-2xl border border-white/[0.08] bg-black transition hover:border-white/[0.14]"
+              className="group overflow-hidden rounded-2xl border border-white/[0.08] bg-black shadow-black/30 transition duration-300 ease-out hover:border-white/[0.16] hover:shadow-[0_28px_56px_-30px_rgba(212,255,63,0.08)] motion-safe:hover:-translate-y-0.5"
             >
               <Link
                 href="#contact"
                 className="block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime focus-visible:ring-offset-2 focus-visible:ring-offset-black"
               >
                 <div
-                  className={`relative aspect-[16/10] overflow-hidden bg-gradient-to-br ${p.gradient}`}
+                  className={`relative aspect-[16/10] overflow-hidden bg-gradient-to-br transition-transform duration-500 ease-out motion-safe:group-hover:scale-[1.012] ${p.gradient}`}
                 >
                   <div
                     className={`absolute inset-0 transition group-hover:opacity-100 ${p.overlayClass}`}
@@ -101,8 +101,8 @@ export function Projects() {
                     </h3>
                     <p className="mt-2 text-sm text-zinc-400">{p.description}</p>
                   </div>
-                  <span className="mt-1 inline-flex rounded-full border border-lime/25 bg-lime/10 p-2 text-lime transition group-hover:bg-lime/15">
-                    <ArrowRightIcon className="size-4" />
+                  <span className="mt-1 inline-flex rounded-full border border-lime/25 bg-lime/10 p-2 text-lime shadow-[0_0_16px_-8px_rgba(212,255,63,0.25)] transition duration-300 ease-out group-hover:border-lime/35 group-hover:bg-lime/14">
+                    <ArrowRightIcon className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5" />
                   </span>
                 </div>
               </Link>

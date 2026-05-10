@@ -1,4 +1,8 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect, useRef } from "react";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 import { ArrowRightIcon } from "./icons";
 import { HeroLaptopMockup } from "./HeroLaptopMockup";
 
@@ -9,16 +13,81 @@ const avatars = [
 ];
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const reduced = usePrefersReducedMotion();
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || reduced) return;
+
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+    if (coarse) return;
+
+    let raf = 0;
+
+    const apply = (clientX: number, clientY: number) => {
+      const r = el.getBoundingClientRect();
+      const hx = ((clientX - r.left) / Math.max(r.width, 1) - 0.5) * 2;
+      const hy = ((clientY - r.top) / Math.max(r.height, 1) - 0.5) * 2;
+      el.style.setProperty("--hero-hx", hx.toFixed(5));
+      el.style.setProperty("--hero-hy", hy.toFixed(5));
+    };
+
+    const onMove = (e: MouseEvent) => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => apply(e.clientX, e.clientY));
+    };
+
+    const onLeave = () => {
+      cancelAnimationFrame(raf);
+      el.style.setProperty("--hero-hx", "0");
+      el.style.setProperty("--hero-hy", "0");
+    };
+
+    el.addEventListener("mousemove", onMove, { passive: true });
+    el.addEventListener("mouseleave", onLeave);
+
+    return () => {
+      cancelAnimationFrame(raf);
+      el.removeEventListener("mousemove", onMove);
+      el.removeEventListener("mouseleave", onLeave);
+    };
+  }, [reduced]);
+
   return (
     <section
+      ref={sectionRef}
       id="home"
-      className="relative overflow-hidden pt-[72px]"
+      className="relative overflow-hidden pt-[72px] [--hero-hx:0] [--hero-hy:0]"
       aria-labelledby="hero-heading"
     >
-      <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_-10%,rgba(212,255,63,0.12),transparent_55%),radial-gradient(ellipse_60%_50%_at_10%_40%,rgba(255,255,255,0.04),transparent_50%)]"
-        aria-hidden
-      />
+      {/* Depth layers — parallax via --hero-hx / --hero-hy on section */}
+      <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+        <div
+          className="lunov-hero-parallax absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_70%_-10%,rgba(212,255,63,0.13),transparent_56%)] transition-[transform] duration-500 ease-out will-change-transform max-md:duration-[580ms]"
+          style={{
+            transform:
+              "translate3d(calc(var(--hero-hx) * 18px), calc(var(--hero-hy) * 14px), 0)",
+          }}
+        />
+        <div
+          className="lunov-hero-parallax absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_15%_42%,rgba(255,255,255,0.055),transparent_52%)] transition-[transform] duration-700 ease-out will-change-transform"
+          style={{
+            transform:
+              "translate3d(calc(var(--hero-hx) * -11px), calc(var(--hero-hy) * -9px), 0)",
+          }}
+        />
+        <div
+          className="lunov-hero-parallax absolute inset-x-[-15%] bottom-[-35%] top-[55%]"
+          style={{
+            transform:
+              "translate3d(calc(var(--hero-hx) * 22px), calc(var(--hero-hy) * -10px), 0)",
+          }}
+        >
+          <div className="lunov-ambient-float h-full w-full rounded-[100%] bg-[radial-gradient(ellipse_at_center,rgba(212,255,63,0.08),transparent_68%)] blur-3xl" />
+        </div>
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,transparent_38%,rgba(0,0,0,0.38)_100%)]" />
+      </div>
 
       <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pt-16 pb-24 sm:gap-12 sm:px-6 sm:pt-20 sm:pb-28 md:grid-cols-2 md:items-center md:gap-x-12 md:gap-y-10 md:pb-32 md:pt-24 lg:gap-x-14 lg:gap-y-12 lg:pb-36 lg:pt-28 lg:px-8">
         <div className="max-w-xl md:min-w-0">
@@ -41,14 +110,16 @@ export function Hero() {
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="#services"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-lime px-7 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-black shadow-[0_0_40px_-8px_rgba(212,255,63,0.55)] transition hover:scale-[1.02] hover:brightness-105 active:scale-[0.99]"
+              className="lunov-btn-primary group inline-flex items-center justify-center gap-2 rounded-full bg-lime px-7 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-black shadow-[0_0_40px_-10px_rgba(212,255,63,0.55)] transition duration-300 ease-out hover:shadow-[0_0_52px_-8px_rgba(212,255,63,0.62)] active:scale-[0.98] motion-safe:hover:-translate-y-px"
             >
-              Our services
-              <ArrowRightIcon className="size-4" />
+              <span className="inline-flex items-center gap-2">
+                Our services
+                <ArrowRightIcon className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5" />
+              </span>
             </Link>
             <Link
               href="#projects"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white transition hover:border-white hover:bg-white/5"
+              className="inline-flex items-center justify-center rounded-full border border-white/25 px-7 py-3.5 text-sm font-bold uppercase tracking-[0.14em] text-white transition duration-300 ease-out hover:border-white/40 hover:bg-white/[0.06] hover:shadow-[0_0_24px_-12px_rgba(255,255,255,0.12)] active:scale-[0.98] motion-safe:hover:-translate-y-px"
             >
               View projects
             </Link>
@@ -59,7 +130,7 @@ export function Hero() {
               {avatars.map((a, i) => (
                 <span
                   key={i}
-                  className={`relative inline-flex size-10 items-center justify-center rounded-full border border-black bg-gradient-to-br ${a.bg} text-[10px] font-bold text-white ring-2 ring-black`}
+                  className={`relative inline-flex size-10 items-center justify-center rounded-full border border-black bg-gradient-to-br ${a.bg} text-[10px] font-bold text-white ring-2 ring-black transition duration-300 ease-out hover:z-10 hover:ring-white/15`}
                 >
                   {a.initials}
                 </span>
@@ -71,7 +142,13 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="min-w-0 md:flex md:justify-end md:self-center">
+        <div
+          className="lunov-hero-parallax min-w-0 transition-[transform] duration-500 ease-out will-change-transform md:flex md:justify-end md:self-center"
+          style={{
+            transform:
+              "translate3d(calc(var(--hero-hx) * 10px), calc(var(--hero-hy) * 8px), 0)",
+          }}
+        >
           <HeroLaptopMockup />
         </div>
       </div>
