@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRightIcon } from "./icons";
+import { HeroLaptopMockup } from "./HeroLaptopMockup";
 
 const avatars = [
   { bg: "from-violet-500/80 to-fuchsia-600/60", initials: "AR" },
@@ -71,23 +71,7 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[560px] md:mx-0 md:max-w-none">
-          <div
-            className="pointer-events-none absolute -inset-6 rounded-[2rem] bg-[radial-gradient(closest-side,rgba(212,255,63,0.22),transparent_75%)] blur-2xl"
-            aria-hidden
-          />
-          <div className="relative overflow-hidden rounded-3xl border border-white/[0.08] bg-gradient-to-b from-zinc-900/40 to-black shadow-[0_40px_80px_-40px_rgba(0,0,0,0.9)]">
-            <Image
-              src="/hero-visual.png"
-              alt="Laptop showing a dark dashboard interface with lime accent highlights"
-              width={1200}
-              height={900}
-              priority
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="w-full object-cover object-center"
-            />
-          </div>
-        </div>
+        <HeroLaptopMockup />
       </div>
     </section>
   );
