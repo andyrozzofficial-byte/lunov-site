@@ -3,37 +3,37 @@ import { ArrowRightIcon } from "./icons";
 
 const projects = [
   {
-    title: "Northloom mastering OS",
+    title: "Refinery — adaptive mastering",
     description:
-      "Operator dashboard for boutique mastering houses — stem ingest, loudness targets, A/B reels, and revision routing in one quiet surface.",
+      "Cloud mastering workspace that couples reference matching models with engineer checkpoints — loudness chains, stem-safe limiting suggestions, and revision history tied to each bounce.",
     gradient: "from-zinc-800 via-zinc-950 to-black",
     overlayClass:
       "bg-[conic-gradient(from_180deg_at_50%_50%,rgba(212,255,63,0.16),transparent_55%)] opacity-90 mix-blend-screen",
     meterLabel: "LUFS int",
-    meterValue: "−14.1",
+    meterValue: "−13.9",
     meterWidth: "w-[72%]",
   },
   {
-    title: "Ribbon artist vault",
+    title: "Northledger rights fabric",
     description:
-      "Upload lanes with checksum verification, automated loudness reports, and AI-assisted metadata hints — always reviewer-approved before masters ship.",
+      "Composition and recording splits across territories — conflict detection on overlapping claims, immutable audit trails, and publisher-facing exports wired to your contracts stack.",
     gradient: "from-indigo-950/88 via-black to-black",
     overlayClass:
       "bg-[radial-gradient(circle_at_30%_20%,rgba(212,255,63,0.22),transparent_55%)] opacity-85",
-    meterLabel: "QC queue",
-    meterValue: "6 ok",
+    meterLabel: "Registry sync",
+    meterValue: "OK",
     meterWidth: "w-[88%]",
   },
   {
-    title: "Glassline delivery portal",
+    title: "Harbour — ops & analytics",
     description:
-      "Realtime analytics on listening sessions, geographic deliveries, and client approvals — built for labels coordinating dozens of releases.",
+      "Multi-tenant console for a creative SaaS vendor: subscription health, ingestion throughput, feature flags, and realtime session telemetry with drill-downs legal can actually read.",
     gradient: "from-emerald-950/55 via-black to-zinc-950",
     overlayClass:
       "bg-[linear-gradient(135deg,rgba(212,255,63,0.14),transparent_45%)] opacity-90",
-    meterLabel: "Sessions",
-    meterValue: "Live",
-    meterWidth: "w-[56%]",
+    meterLabel: "Live events",
+    meterValue: "18.2k/s",
+    meterWidth: "w-[62%]",
   },
 ];
 
@@ -54,7 +54,7 @@ export function Projects() {
               id="projects-heading"
               className="font-display mt-3 text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-4xl sm:leading-[1.1]"
             >
-              Platforms we&apos;ve shaped
+              Systems we&apos;ve shipped
             </h2>
           </div>
           <Link

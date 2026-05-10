@@ -10,10 +10,10 @@ const navLinks = [
 ];
 
 const serviceLinks = [
-  { href: "#services", label: "Mastering & metering UX" },
-  { href: "#services", label: "Realtime audio engineering" },
-  { href: "#services", label: "Ingest & delivery infrastructure" },
-  { href: "#services", label: "Artist rooms & client portals" },
+  { href: "#services", label: "Websites & flagship products" },
+  { href: "#services", label: "Apps & realtime surfaces" },
+  { href: "#services", label: "AI-assisted workflows" },
+  { href: "#services", label: "Infrastructure & automation" },
 ];
 
 function SocialInstagram({ className }: { className?: string }) {
@@ -57,13 +57,13 @@ export function Footer() {
                   </span>
                 </span>
                 <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.28em] text-zinc-500">
-                  Creative technology
+                  Scandinavian digital studio
                 </span>
               </div>
             </Link>
             <p className="mt-7 max-w-sm text-sm leading-[1.68] text-zinc-500">
-              Product surfaces and infrastructure for audio teams — dashboards,
-              delivery rails, and automation that stay composed under load.
+              Premium websites, apps, and backends — plus automation and
+              analytics layers that stay composed when traffic spikes.
             </p>
             <p className="mt-10 text-[11px] tracking-wide text-zinc-600">
               © {new Date().getFullYear()} LUNOV Studio

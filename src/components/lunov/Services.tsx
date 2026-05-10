@@ -2,33 +2,33 @@ import {
   CodeIcon,
   DatabaseIcon,
   DevicePhoneIcon,
-  WaveformBarsIcon,
+  GlobeIcon,
 } from "./icons";
 
 const items = [
   {
-    title: "Mastering & metering UX",
+    title: "Websites & flagship products",
     description:
-      "Interfaces tuned for critical listening — loudness workflows, stem clarity, and revision loops that match how engineers actually work.",
-    Icon: WaveformBarsIcon,
+      "Campaign-grade marketing sites and narrative product storytelling — fast, accessible, and engineered so design intent survives launch week.",
+    Icon: GlobeIcon,
   },
   {
-    title: "Realtime audio engineering",
+    title: "Apps & realtime surfaces",
     description:
-      "Low-latency previews, resilient streaming pipelines, and careful integration with DSP workloads across web and native shells.",
+      "Cross-platform clients and live dashboards — thoughtful state handling, resilient streaming, and UX that stays legible when data moves quickly.",
+    Icon: DevicePhoneIcon,
+  },
+  {
+    title: "AI-assisted workflows",
+    description:
+      "Grounded assistive features: retrieval-aware tooling, review queues, and automation that amplifies operators instead of replacing judgment.",
     Icon: CodeIcon,
   },
   {
-    title: "Ingest & delivery infrastructure",
+    title: "Infrastructure & automation",
     description:
-      "Secure uploads, automated QC checks, asset versioning, and packaging logic so masters leave the building consistently.",
+      "Upload pipelines, registries, booking and admin backends, observability, and the glue services that keep creative SaaS predictable at scale.",
     Icon: DatabaseIcon,
-  },
-  {
-    title: "Artist rooms & client portals",
-    description:
-      "Private listening links, approval flows, and branded delivery surfaces — minimal friction for artists and A&R.",
-    Icon: DevicePhoneIcon,
   },
 ];
 
@@ -49,13 +49,13 @@ export function Services() {
               id="services-heading"
               className="font-display mt-3 text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-4xl sm:leading-[1.1]"
             >
-              Tools for people who shape sound
+              Full-stack creative technology
             </h2>
           </div>
           <p className="max-w-md text-sm leading-[1.68] text-zinc-400 lg:text-right lg:text-base lg:leading-[1.65]">
-            Product and infrastructure for mastering platforms, artist systems,
-            and creative SaaS — designed like studio gear: precise, calm, and
-            built to survive touring schedules.
+            From public-facing sites to internal consoles — the same restraint,
+            typography, and engineering discipline whether we&apos;re shipping a
+            brand moment or a rights ledger behind it.
           </p>
         </div>
 

@@ -25,13 +25,13 @@ export function Cta() {
                 id="cta-heading"
                 className="font-display mt-4 text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-4xl sm:leading-[1.08] lg:text-5xl"
               >
-                Ship a surface your engineers trust.
+                Let&apos;s scope something worth launching.
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-base leading-[1.68] text-zinc-400 lg:mx-0 lg:leading-[1.65]">
-                Share what you&apos;re building — metering consoles, artist
-                ingest, delivery portals, or realtime QC — plus timelines,
-                formats, and integrations. We&apos;ll reply with a concise plan
-                and sensible milestones.
+                Tell us about the experience or system — marketing site, mobile
+                client, booking stack, rights tooling, AI-assisted workflow, or
+                realtime analytics — plus constraints and integrations. We reply
+                with a clear proposal and phased milestones.
               </p>
 
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">

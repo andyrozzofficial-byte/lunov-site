@@ -6,27 +6,27 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 const steps = [
   {
     n: 1,
-    title: "Signal map & constraints",
+    title: "Alignment & system map",
     description:
-      "Formats, loudness targets, latency budgets, and integrations — captured before UI sketching so metering and QC stay truthful.",
+      "Stakeholders, integrations, compliance hooks, and SLAs — documented before pixels so dashboards, uploads, and AI touchpoints share one truth.",
   },
   {
     n: 2,
-    title: "Console prototypes",
+    title: "Design & prototypes",
     description:
-      "Layouts for engineers: ingest queues, spectral views, and revision loops validated with low-fi interaction before engineering spikes.",
+      "High-fidelity UX for web and app shells, interactive flows for admins and clients, and early validation with realistic edge cases.",
   },
   {
     n: 3,
-    title: "Integrate & harden",
+    title: "Build & integrate",
     description:
-      "Streaming previews, upload pipelines, auth boundaries, and observability — tuned until nightly mastering traffic feels boring.",
+      "APIs, auth, realtime layers, batch jobs, and telemetry — performance budgets and accessibility passes treated as part of the feature set.",
   },
   {
     n: 4,
-    title: "Operate & refine",
+    title: "Launch & evolve",
     description:
-      "Realtime analytics on deliveries, automation knobs, and iteration cadence shaped around how your room actually ships masters.",
+      "Rollouts with observability you can act on, automation runbooks, and iteration rhythm tied to product signals rather than vanity metrics.",
   },
 ];
 
@@ -68,7 +68,7 @@ export function Process() {
             id="process-heading"
             className="font-display mt-3 text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-4xl sm:leading-[1.1]"
           >
-            From ingest queue to signed-off master.
+            From brief alignment to production traffic.
           </h2>
         </div>
 
