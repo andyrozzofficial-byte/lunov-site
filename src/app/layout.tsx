@@ -19,13 +19,13 @@ const lunovBody = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "LUNOV — Digital Studio",
+  title: "LUNOV — Creative technology for audio",
   description:
-    "Web design, development, and systems for brands that expect performance. LUNOV Digital Studio builds fast, refined digital experiences.",
+    "LUNOV designs and builds mastering dashboards, artist ingest systems, delivery portals, and realtime creative tooling — premium interfaces, dependable infrastructure.",
   openGraph: {
-    title: "LUNOV — Digital Studio",
+    title: "LUNOV — Creative technology for audio",
     description:
-      "Digital experiences built to perform. Web, design, and systems.",
+      "Mastering platforms, artist systems, and automation for modern audio products.",
     type: "website",
   },
 };

@@ -73,7 +73,7 @@ export function Header() {
               </span>
             </span>
             <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.28em] text-zinc-500">
-              Digital studio
+              Creative technology
             </span>
           </div>
         </Link>

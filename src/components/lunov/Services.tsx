@@ -2,32 +2,32 @@ import {
   CodeIcon,
   DatabaseIcon,
   DevicePhoneIcon,
-  GlobeIcon,
+  WaveformBarsIcon,
 } from "./icons";
 
 const items = [
   {
-    title: "Web design",
+    title: "Mastering & metering UX",
     description:
-      "Interfaces that feel intentional — typography, motion, and hierarchy tuned for clarity and conversion.",
-    Icon: GlobeIcon,
+      "Interfaces tuned for critical listening — loudness workflows, stem clarity, and revision loops that match how engineers actually work.",
+    Icon: WaveformBarsIcon,
   },
   {
-    title: "Web development",
+    title: "Realtime audio engineering",
     description:
-      "Modern frontends with disciplined performance budgets, accessibility, and maintainable architecture.",
+      "Low-latency previews, resilient streaming pipelines, and careful integration with DSP workloads across web and native shells.",
     Icon: CodeIcon,
   },
   {
-    title: "Systems & integration",
+    title: "Ingest & delivery infrastructure",
     description:
-      "CMS, APIs, and automation that keep content and data flowing without slowing your team down.",
+      "Secure uploads, automated QC checks, asset versioning, and packaging logic so masters leave the building consistently.",
     Icon: DatabaseIcon,
   },
   {
-    title: "Product & mobile",
+    title: "Artist rooms & client portals",
     description:
-      "Responsive product surfaces and focused mobile experiences that stay sharp across breakpoints.",
+      "Private listening links, approval flows, and branded delivery surfaces — minimal friction for artists and A&R.",
     Icon: DevicePhoneIcon,
   },
 ];
@@ -49,12 +49,13 @@ export function Services() {
               id="services-heading"
               className="font-display mt-3 text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-4xl sm:leading-[1.1]"
             >
-              Services that make the difference
+              Tools for people who shape sound
             </h2>
           </div>
           <p className="max-w-md text-sm leading-[1.68] text-zinc-400 lg:text-right lg:text-base lg:leading-[1.65]">
-            Strategy, craft, and engineering in one studio — so your launch
-            timeline stays realistic and the output stays exceptional.
+            Product and infrastructure for mastering platforms, artist systems,
+            and creative SaaS — designed like studio gear: precise, calm, and
+            built to survive touring schedules.
           </p>
         </div>
 

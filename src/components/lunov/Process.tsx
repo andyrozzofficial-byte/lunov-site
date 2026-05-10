@@ -6,45 +6,43 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 const steps = [
   {
     n: 1,
-    title: "Discovery & planning",
+    title: "Signal map & constraints",
     description:
-      "Goals, constraints, and measurement — aligned before a single pixel ships.",
+      "Formats, loudness targets, latency budgets, and integrations — captured before UI sketching so metering and QC stay truthful.",
   },
   {
     n: 2,
-    title: "Design & prototype",
+    title: "Console prototypes",
     description:
-      "Direction, UX flows, and interactive prototypes that de-risk the build.",
+      "Layouts for engineers: ingest queues, spectral views, and revision loops validated with low-fi interaction before engineering spikes.",
   },
   {
     n: 3,
-    title: "Build & launch",
+    title: "Integrate & harden",
     description:
-      "Implementation with performance checks, accessibility passes, and QA.",
+      "Streaming previews, upload pipelines, auth boundaries, and observability — tuned until nightly mastering traffic feels boring.",
   },
   {
     n: 4,
-    title: "Grow & optimize",
+    title: "Operate & refine",
     description:
-      "Iteration cadence, analytics hooks, and improvements based on real usage.",
+      "Realtime analytics on deliveries, automation knobs, and iteration cadence shaped around how your room actually ships masters.",
   },
 ];
 
 export function Process() {
   const reduced = usePrefersReducedMotion();
   const rootRef = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
+  const [ioVisible, setIoVisible] = useState(false);
+  const visible = reduced || ioVisible;
 
   useEffect(() => {
-    if (reduced) {
-      setVisible(true);
-      return;
-    }
+    if (reduced) return;
     const el = rootRef.current;
     if (!el) return;
     const io = new IntersectionObserver(
       ([e]) => {
-        if (e?.isIntersecting) setVisible(true);
+        if (e?.isIntersecting) setIoVisible(true);
       },
       { threshold: 0.12, rootMargin: "0px 0px -10% 0px" },
     );
@@ -70,7 +68,7 @@ export function Process() {
             id="process-heading"
             className="font-display mt-3 text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-4xl sm:leading-[1.1]"
           >
-            Simple. Transparent. Effective.
+            From ingest queue to signed-off master.
           </h2>
         </div>
 

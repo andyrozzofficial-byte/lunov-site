@@ -10,10 +10,10 @@ const navLinks = [
 ];
 
 const serviceLinks = [
-  { href: "#services", label: "Web design" },
-  { href: "#services", label: "Web development" },
-  { href: "#services", label: "Systems & integration" },
-  { href: "#services", label: "Product & mobile" },
+  { href: "#services", label: "Mastering & metering UX" },
+  { href: "#services", label: "Realtime audio engineering" },
+  { href: "#services", label: "Ingest & delivery infrastructure" },
+  { href: "#services", label: "Artist rooms & client portals" },
 ];
 
 function SocialInstagram({ className }: { className?: string }) {
@@ -57,16 +57,16 @@ export function Footer() {
                   </span>
                 </span>
                 <span className="mt-1 block text-[10px] font-medium uppercase tracking-[0.28em] text-zinc-500">
-                  Digital studio
+                  Creative technology
                 </span>
               </div>
             </Link>
             <p className="mt-7 max-w-sm text-sm leading-[1.68] text-zinc-500">
-              Precision-built websites and product interfaces — engineered for
-              clarity, speed, and longevity.
+              Product surfaces and infrastructure for audio teams — dashboards,
+              delivery rails, and automation that stay composed under load.
             </p>
             <p className="mt-10 text-[11px] tracking-wide text-zinc-600">
-              © {new Date().getFullYear()} LUNOV Digital Studio
+              © {new Date().getFullYear()} LUNOV Studio
             </p>
           </div>
 
@@ -145,7 +145,7 @@ export function Footer() {
         <div className="relative mt-16 pt-10">
           <div className="pointer-events-none absolute inset-x-0 top-0 lunov-divider-bottom opacity-70" aria-hidden />
           <p className="text-center text-[11px] leading-relaxed tracking-wide text-zinc-600 lg:text-right">
-            Designed with restraint. Built to perform.{" "}
+            Calm interfaces. Serious pipelines.{" "}
             <span className="text-lime/90" aria-hidden>
               ♥
             </span>

@@ -3,28 +3,37 @@ import { ArrowRightIcon } from "./icons";
 
 const projects = [
   {
-    title: "Lunov mastering platform",
+    title: "Northloom mastering OS",
     description:
-      "Artist tooling with realtime previews and streamlined delivery.",
+      "Operator dashboard for boutique mastering houses — stem ingest, loudness targets, A/B reels, and revision routing in one quiet surface.",
     gradient: "from-zinc-800 via-zinc-950 to-black",
     overlayClass:
       "bg-[conic-gradient(from_180deg_at_50%_50%,rgba(212,255,63,0.16),transparent_55%)] opacity-90 mix-blend-screen",
+    meterLabel: "LUFS int",
+    meterValue: "−14.1",
+    meterWidth: "w-[72%]",
   },
   {
-    title: "Northline commerce",
+    title: "Ribbon artist vault",
     description:
-      "Composable storefront experience with sub-second interaction targets.",
-    gradient: "from-indigo-950/90 via-black to-black",
+      "Upload lanes with checksum verification, automated loudness reports, and AI-assisted metadata hints — always reviewer-approved before masters ship.",
+    gradient: "from-indigo-950/88 via-black to-black",
     overlayClass:
       "bg-[radial-gradient(circle_at_30%_20%,rgba(212,255,63,0.22),transparent_55%)] opacity-85",
+    meterLabel: "QC queue",
+    meterValue: "6 ok",
+    meterWidth: "w-[88%]",
   },
   {
-    title: "Atlas analytics hub",
+    title: "Glassline delivery portal",
     description:
-      "Executive dashboards that stay legible under heavy data density.",
-    gradient: "from-emerald-950/60 via-black to-zinc-950",
+      "Realtime analytics on listening sessions, geographic deliveries, and client approvals — built for labels coordinating dozens of releases.",
+    gradient: "from-emerald-950/55 via-black to-zinc-950",
     overlayClass:
       "bg-[linear-gradient(135deg,rgba(212,255,63,0.14),transparent_45%)] opacity-90",
+    meterLabel: "Sessions",
+    meterValue: "Live",
+    meterWidth: "w-[56%]",
   },
 ];
 
@@ -45,14 +54,14 @@ export function Projects() {
               id="projects-heading"
               className="font-display mt-3 text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-4xl sm:leading-[1.1]"
             >
-              Some things we&apos;re proud of.
+              Platforms we&apos;ve shaped
             </h2>
           </div>
           <Link
             href="#contact"
             className="group/link inline-flex items-center gap-2 self-start text-xs font-bold uppercase tracking-[0.22em] text-lime transition-colors duration-300 ease-out hover:text-white sm:self-auto"
           >
-            View all projects
+            Discuss a build
             <ArrowRightIcon className="size-4 transition-transform duration-500 ease-out group-hover/link:translate-x-1 group-hover/link:text-lime/90" />
           </Link>
         </div>
@@ -84,14 +93,23 @@ export function Projects() {
                       }}
                       aria-hidden
                     />
-                    <div className="absolute inset-x-6 bottom-6 rounded-xl border border-white/[0.085] bg-black/38 p-4 shadow-inner backdrop-blur-md">
+                    <div className="absolute inset-x-6 bottom-6 rounded-xl border border-white/[0.085] bg-black/42 p-4 shadow-inner backdrop-blur-md">
                       <div className="flex items-center justify-between gap-3">
-                        <div className="h-2 flex-1 rounded-full bg-white/[0.09]">
-                          <div className="h-full w-2/5 rounded-full bg-lime/85 shadow-[0_0_14px_rgba(212,255,63,0.35)] transition-[width,filter] duration-700 ease-out group-hover:w-[48%] group-hover:brightness-105" />
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="font-mono text-[9px] uppercase tracking-wider text-zinc-500">
+                              {p.meterLabel}
+                            </span>
+                            <span className="font-mono text-[10px] tabular-nums text-zinc-400">
+                              {p.meterValue}
+                            </span>
+                          </div>
+                          <div className="mt-2 h-2 rounded-full bg-white/[0.09]">
+                            <div
+                              className={`h-full rounded-full bg-lime/85 shadow-[0_0_14px_rgba(212,255,63,0.32)] transition-[width,filter] duration-700 ease-out group-hover:brightness-105 ${p.meterWidth} motion-safe:group-hover:w-[82%]`}
+                            />
+                          </div>
                         </div>
-                        <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">
-                          Live
-                        </span>
                       </div>
                     </div>
                   </div>

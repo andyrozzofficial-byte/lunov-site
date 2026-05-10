@@ -19,18 +19,19 @@ export function Cta() {
           <div className="relative grid gap-11 text-center lg:grid-cols-12 lg:gap-12 lg:items-center lg:text-left">
             <div className="mx-auto max-w-xl lg:col-span-7 lg:mx-0">
               <p className="text-xs font-bold uppercase tracking-[0.35em] text-lime">
-                Ready to build something great?
+                Ready when your roadmap is
               </p>
               <h2
                 id="cta-heading"
                 className="font-display mt-4 text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-4xl sm:leading-[1.08] lg:text-5xl"
               >
-                Let&apos;s create something amazing.
+                Ship a surface your engineers trust.
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-base leading-[1.68] text-zinc-400 lg:mx-0 lg:leading-[1.65]">
-                Have an idea or a project in mind? Tell us what you&apos;re
-                aiming for — timeline, audience, and success metrics — and
-                we&apos;ll propose a focused path forward.
+                Share what you&apos;re building — metering consoles, artist
+                ingest, delivery portals, or realtime QC — plus timelines,
+                formats, and integrations. We&apos;ll reply with a concise plan
+                and sensible milestones.
               </p>
 
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">

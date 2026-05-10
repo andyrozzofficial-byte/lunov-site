@@ -17,14 +17,12 @@ type RevealProps = {
 
 export function Reveal({ children, delayMs = 0, className }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const [shown, setShown] = useState(false);
+  const [ioShown, setIoShown] = useState(false);
   const reduced = usePrefersReducedMotion();
+  const shown = reduced || ioShown;
 
   useEffect(() => {
-    if (reduced) {
-      setShown(true);
-      return;
-    }
+    if (reduced) return;
 
     const node = ref.current;
     if (!node) return;
@@ -32,7 +30,7 @@ export function Reveal({ children, delayMs = 0, className }: RevealProps) {
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
-          setShown(true);
+          setIoShown(true);
           io.disconnect();
         }
       },

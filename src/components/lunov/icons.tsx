@@ -154,3 +154,45 @@ export function PhoneIcon({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function WaveformBarsIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
+      <rect x="3" y="11" width="2.2" height="8" rx="0.5" opacity="0.35" />
+      <rect x="6.5" y="7" width="2.2" height="16" rx="0.5" />
+      <rect x="10" y="9" width="2.2" height="12" rx="0.5" opacity="0.75" />
+      <rect x="13.5" y="5" width="2.2" height="18" rx="0.5" />
+      <rect x="17" y="8" width="2.2" height="13" rx="0.5" opacity="0.65" />
+      <rect x="20.5" y="10" width="2.2" height="9" rx="0.5" opacity="0.4" />
+    </svg>
+  );
+}
+
+export function StereoMeterIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.5}
+      aria-hidden
+    >
+      <path
+        strokeLinecap="round"
+        d="M6 19V5m4 14V9m4 10V7m4 12v-8"
+      />
+      <path
+        strokeLinecap="round"
+        strokeDasharray="2 3"
+        strokeOpacity={0.35}
+        d="M6 19h12"
+      />
+    </svg>
+  );
+}
