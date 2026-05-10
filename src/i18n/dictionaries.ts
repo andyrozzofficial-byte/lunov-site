@@ -29,7 +29,7 @@ const sv: Messages = {
     titleBefore: "Premium digitala upplevelser",
     titleAccent: "och system.",
     body:
-      "Vi designar och bygger webb, produktgränssnitt och backends — inklusive AI-stödda flöden, automation och realtidsanalys. Små, seniora team; stort fokus på lugn typografi och kod som håller i drift.",
+      "Vi designar och bygger webb, appar och digitala plattformar — från AI-drivna flöden till automation och realtidsdashboardar. Skandinavisk design möter stabil teknik och genomtänkta användarupplevelser.",
     ctaPrimary: "Vad vi gör",
     ctaSecondary: "Utvalt arbete",
     trust:
@@ -205,7 +205,7 @@ const en: Messages = {
     titleBefore: "Premium digital experiences",
     titleAccent: "& systems.",
     body:
-      "We design and build websites, product interfaces and backends — including AI-assisted flows, automation and realtime analytics. Small senior teams; calm typography and code that holds up in production.",
+      "We design and build web platforms, apps and digital systems — from AI-powered workflows to automation and real-time dashboards. Scandinavian design meets stable technology and thoughtful user experiences.",
     ctaPrimary: "What we build",
     ctaSecondary: "Selected work",
     trust:
