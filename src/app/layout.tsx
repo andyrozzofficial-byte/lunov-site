@@ -24,14 +24,6 @@ export const metadata: Metadata = {
     default: "LUNOV",
     template: "%s",
   },
-  icons: {
-    icon: [
-      { url: "/favicon.ico", type: "image/x-icon" },
-      { url: "/icon.png", type: "image/png" },
-    ],
-    apple: [{ url: "/icon.png", type: "image/png" }],
-    shortcut: ["/favicon.ico"],
-  },
 };
 
 export default function RootLayout({
