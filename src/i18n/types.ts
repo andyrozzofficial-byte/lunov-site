@@ -8,6 +8,7 @@ export type ProjectCard = {
   description: string;
   meterLabel: string;
   meterValue: string;
+  imageAlt: string;
 };
 
 export type ProcessStep = {

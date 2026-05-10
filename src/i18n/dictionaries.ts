@@ -96,25 +96,28 @@ const sv: Messages = {
     cta: "Prata scope",
     items: [
       {
-        title: "Refinery — AI-mastering",
+        title: "Mastrify",
         description:
-          "Molnlabb för mastering med referensmatchning och tydliga mänskliga grindar — loudness-kedjor, stem-säker limiting och revisionshistorik per bounce.",
+          "AI-masteringplattform med analys, referensmatchning och automatiserade masteringflöden.",
         meterLabel: "LUFS int",
-        meterValue: "−13.9",
+        meterValue: "−14.0",
+        imageAlt: "Förhandsvisning av Mastrify — AI-masteringgränssnitt",
       },
       {
-        title: "Northledger — rättighetsregister",
+        title: "Söder Entertainment",
         description:
-          "Splits för verk och inspelning över territorier — krockdetektering, oföränderlig revision och export till juridik och publishers.",
-        meterLabel: "Synk",
+          "Kommersiell webb för event och underhållning — bokningsfokuserad UX och responsiv design.",
+        meterLabel: "Bokning",
+        meterValue: "Live",
+        imageAlt: "Förhandsvisning av Söder Entertainment — webbplats",
+      },
+      {
+        title: "AI Music Registry",
+        description:
+          "Rättighetsregister och AI-träningsinfrastruktur för ägarskap, fingeravtryck och licensiering.",
+        meterLabel: "Register",
         meterValue: "OK",
-      },
-      {
-        title: "Fjord — artistportal",
-        description:
-          "Säkra uppladdningar med checksums, kö och granskning innan leverans till kundportaler — för bolag som koordinerar masters och metadata.",
-        meterLabel: "Kö",
-        meterValue: "12 aktiva",
+        imageAlt: "Förhandsvisning av AI Music Registry — kontrollpanel",
       },
     ],
   },
@@ -268,25 +271,28 @@ const en: Messages = {
     cta: "Discuss scope",
     items: [
       {
-        title: "Refinery — AI mastering",
+        title: "Mastrify",
         description:
-          "Cloud mastering workspace pairing reference models with human gates — loudness chains, stem-aware limiting suggestions and per-bounce revision history.",
+          "AI mastering platform with analysis, reference matching and automated mastering workflows.",
         meterLabel: "LUFS int",
-        meterValue: "−13.9",
+        meterValue: "−14.0",
+        imageAlt: "Mastrify AI mastering platform screenshot preview",
       },
       {
-        title: "Northledger — rights registry",
+        title: "Söder Entertainment",
         description:
-          "Composition and recording splits across territories — conflict detection, immutable audit trails and exports for legal and publishers.",
-        meterLabel: "Registry sync",
+          "Commercial event and entertainment website — booking-focused UX and responsive design.",
+        meterLabel: "Booking",
+        meterValue: "Live",
+        imageAlt: "Söder Entertainment website screenshot preview",
+      },
+      {
+        title: "AI Music Registry",
+        description:
+          "Rights registry and AI training infrastructure for music ownership, fingerprinting and licensing.",
+        meterLabel: "Registry",
         meterValue: "OK",
-      },
-      {
-        title: "Fjord — artist upload portal",
-        description:
-          "Secure uploads with checksums, queues and review gates before client delivery — for teams coordinating masters, stems and metadata.",
-        meterLabel: "Queue",
-        meterValue: "12 active",
+        imageAlt: "AI Music Registry dashboard screenshot preview",
       },
     ],
   },

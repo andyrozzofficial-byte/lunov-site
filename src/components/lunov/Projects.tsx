@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
 import type { Messages } from "@/i18n/types";
@@ -8,24 +9,19 @@ type ProjectsProps = {
   copy: Messages["projects"];
 };
 
-const accents = [
+/** Preview assets — order matches `copy.items` in dictionaries (sv/en). */
+const projectPreviews = [
   {
-    gradient: "from-zinc-800 via-zinc-950 to-black",
-    overlayClass:
-      "bg-[conic-gradient(from_180deg_at_50%_50%,rgba(212,255,63,0.16),transparent_55%)] opacity-90 mix-blend-screen",
+    src: "/images/projects/mastrify.webp",
     meterWidth: "w-[72%]",
   },
   {
-    gradient: "from-indigo-950/88 via-black to-black",
-    overlayClass:
-      "bg-[radial-gradient(circle_at_30%_20%,rgba(212,255,63,0.22),transparent_55%)] opacity-85",
-    meterWidth: "w-[88%]",
+    src: "/images/projects/soder-entertainment.webp",
+    meterWidth: "w-[76%]",
   },
   {
-    gradient: "from-emerald-950/55 via-black to-zinc-950",
-    overlayClass:
-      "bg-[linear-gradient(135deg,rgba(212,255,63,0.14),transparent_45%)] opacity-90",
-    meterWidth: "w-[64%]",
+    src: "/images/projects/ai-music-registry.webp",
+    meterWidth: "w-[84%]",
   },
 ] as const;
 
@@ -62,7 +58,7 @@ export function Projects({ locale, copy }: ProjectsProps) {
 
         <div className="mt-12 grid gap-5 sm:mt-14 lg:mt-16 lg:grid-cols-3 lg:gap-7">
           {copy.items.map((p, i) => {
-            const a = accents[i]!;
+            const visual = projectPreviews[i]!;
             return (
               <article
                 key={p.title}
@@ -72,24 +68,34 @@ export function Projects({ locale, copy }: ProjectsProps) {
                   href={`${prefix}#contact`}
                   className="relative z-[1] block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-lime/90 focus-visible:ring-offset-2 focus-visible:ring-offset-black"
                 >
-                  <div className="relative overflow-hidden">
-                    <div
-                      className={`relative aspect-[16/10] origin-center bg-gradient-to-br transition-[transform] duration-[720ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:scale-[1.03] ${a.gradient}`}
-                    >
+                  <div className="relative overflow-hidden bg-zinc-950">
+                    <div className="relative aspect-[16/10] origin-center">
+                      <Image
+                        src={visual.src}
+                        alt={p.imageAlt}
+                        fill
+                        sizes="(max-width: 1024px) 100vw, 33vw"
+                        className="object-cover object-top transition-[transform,filter] duration-[720ms] ease-[cubic-bezier(0.22,1,0.36,1)] motion-safe:group-hover:scale-[1.03]"
+                        priority={i === 0}
+                      />
                       <div
-                        className={`absolute inset-0 transition-opacity duration-[720ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100 ${a.overlayClass}`}
+                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-black/35 to-transparent opacity-[0.92]"
                         aria-hidden
                       />
                       <div
-                        className="absolute inset-0 opacity-[0.065]"
+                        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-lime/[0.06] via-transparent to-transparent opacity-70 mix-blend-screen transition-opacity duration-[720ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-90"
+                        aria-hidden
+                      />
+                      <div
+                        className="pointer-events-none absolute inset-0 opacity-[0.04]"
                         style={{
                           backgroundImage:
-                            "linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px)",
+                            "linear-gradient(rgba(255,255,255,0.09) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.09) 1px, transparent 1px)",
                           backgroundSize: "32px 32px",
                         }}
                         aria-hidden
                       />
-                      <div className="absolute inset-x-5 bottom-5 rounded-xl border border-white/[0.085] bg-black/42 p-3.5 shadow-inner backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:p-4">
+                      <div className="absolute inset-x-5 bottom-5 rounded-xl border border-white/[0.085] bg-black/55 p-3.5 shadow-inner backdrop-blur-md sm:inset-x-6 sm:bottom-6 sm:p-4">
                         <div className="flex items-center justify-between gap-3">
                           <div className="min-w-0 flex-1">
                             <div className="flex items-center justify-between gap-2">
@@ -102,7 +108,7 @@ export function Projects({ locale, copy }: ProjectsProps) {
                             </div>
                             <div className="mt-2 h-2 rounded-full bg-white/[0.09]">
                               <div
-                                className={`h-full rounded-full bg-lime/85 shadow-[0_0_14px_rgba(212,255,63,0.32)] transition-[width,filter] duration-[720ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:brightness-105 ${a.meterWidth} motion-safe:group-hover:w-[82%]`}
+                                className={`h-full rounded-full bg-lime/85 shadow-[0_0_14px_rgba(212,255,63,0.32)] transition-[width,filter] duration-[720ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:brightness-105 ${visual.meterWidth} motion-safe:group-hover:w-[82%]`}
                               />
                             </div>
                           </div>
