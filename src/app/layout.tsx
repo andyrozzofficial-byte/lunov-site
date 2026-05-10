@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     default: "LUNOV",
     template: "%s",
   },
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://lunov.dev"),
 };
 
 export default function RootLayout({

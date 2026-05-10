@@ -19,14 +19,32 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const locale = raw as Locale;
   const t = getDictionary(locale);
 
+  const ogTitle = "LUNOV — Premium digitala upplevelser och system";
+  const ogDescription = "Vi formar webb, appar, dashboards och infrastruktur för moderna team.";
+  const ogImage = "/og-image.png";
+
   return {
     title: t.meta.title,
     description: t.meta.description,
     openGraph: {
-      title: t.meta.title,
-      description: t.meta.ogDescription,
+      title: ogTitle,
+      description: ogDescription,
       type: "website",
       locale: locale === "sv" ? "sv_SE" : "en_US",
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: "LUNOV",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description: ogDescription,
+      images: [ogImage],
     },
     alternates: {
       canonical: `/${locale}`,
