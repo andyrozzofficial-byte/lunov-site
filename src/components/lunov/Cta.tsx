@@ -10,11 +10,11 @@ export function Cta({ copy }: CtaProps) {
   return (
     <section
       id="contact"
-      className="lunov-section relative scroll-mt-[calc(var(--header-h)+0.75rem)] border-t border-white/[0.055] bg-black px-4 pb-[clamp(4.5rem,11vw,8rem)] pt-[clamp(4rem,10vw,7rem)] sm:scroll-mt-28 sm:px-6 lg:px-8"
+      className="lunov-section relative scroll-mt-[calc(var(--header-h)+0.75rem)] border-t border-white/[0.055] bg-black px-[clamp(1rem,4vw,2rem)] pb-[clamp(4.5rem,11vw,8rem)] pt-[clamp(4rem,10vw,7rem)] sm:scroll-mt-28 sm:px-6 lg:px-8"
       aria-labelledby="cta-heading"
     >
       <div className="pointer-events-none absolute inset-x-0 top-0 lunov-divider-top opacity-90" aria-hidden />
-      <div className="mx-auto max-w-7xl">
+      <div className="relative z-[1] mx-auto max-w-7xl">
         <div className="relative overflow-hidden rounded-[1.35rem] border border-white/[0.065] bg-gradient-to-br from-zinc-900/88 via-[#101010] to-black px-5 py-12 shadow-[0_0_72px_-42px_rgba(212,255,63,0.18)] transition-[box-shadow,border-color] duration-[680ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-white/[0.08] hover:shadow-[0_0_88px_-38px_rgba(212,255,63,0.22)] sm:rounded-[2rem] sm:px-10 sm:py-14 lg:px-16 lg:py-16">
           <div
             className="lunov-cta-glow-drift pointer-events-none absolute -right-28 top-1/2 size-[440px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(212,255,63,0.11),transparent_66%)]"
@@ -61,7 +61,7 @@ export function Cta({ copy }: CtaProps) {
             <div className="flex justify-center lg:col-span-5 lg:justify-end">
               <Link
                 href="mailto:hello@lunov.studio"
-                className="lunov-btn-primary group inline-flex w-full max-w-[340px] items-center justify-center gap-2 rounded-full bg-lime px-9 py-4 text-[13px] font-bold uppercase tracking-[0.14em] text-black shadow-[0_0_44px_-12px_rgba(212,255,63,0.48)] transition-[transform,box-shadow] duration-[640ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:shadow-[0_0_58px_-10px_rgba(212,255,63,0.52)] motion-safe:hover:-translate-y-px sm:max-w-none lg:w-auto lg:max-w-[280px] sm:text-sm"
+                className="lunov-btn-primary lunov-btn-solid group inline-flex min-h-[48px] w-full max-w-[340px] items-center justify-center gap-2 rounded-full bg-lime px-9 py-4 text-[13px] font-bold uppercase tracking-[0.14em] text-black shadow-[0_0_44px_-12px_rgba(212,255,63,0.48)] motion-safe:hover:-translate-y-px sm:max-w-none sm:min-h-[52px] lg:w-auto lg:max-w-[280px] sm:text-sm"
               >
                 <span className="inline-flex items-center gap-2">
                   {copy.button}

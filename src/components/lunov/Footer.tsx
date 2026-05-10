@@ -32,6 +32,12 @@ function SocialLinkedin({ className }: { className?: string }) {
   );
 }
 
+const socialIcons = [
+  { Icon: SocialInstagram, label: "Instagram" },
+  { Icon: SocialYoutube, label: "YouTube" },
+  { Icon: SocialLinkedin, label: "LinkedIn" },
+] as const;
+
 export function Footer({ locale, messages }: FooterProps) {
   const prefix = `/${locale}`;
   const { footer, nav, services } = messages;
@@ -50,47 +56,49 @@ export function Footer({ locale, messages }: FooterProps) {
   }));
 
   return (
-    <footer className="relative border-t border-white/[0.045] bg-black px-4 pb-12 pt-[clamp(3.5rem,9vw,5rem)] sm:px-6 sm:pb-14 sm:pt-20 lg:px-8">
-      <div className="pointer-events-none absolute inset-x-0 top-0 lunov-divider-top opacity-80" aria-hidden />
-      <div className="mx-auto max-w-7xl">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-12">
+    <footer className="relative overflow-hidden border-t border-white/[0.055] bg-gradient-to-b from-black via-black to-[#050508] px-[clamp(1rem,4vw,2rem)] pb-12 pt-[clamp(4rem,10vw,5.25rem)] sm:px-6 sm:pb-14 sm:pt-[clamp(4.5rem,9vw,5.5rem)] lg:px-8">
+      <div className="pointer-events-none absolute inset-x-0 top-0 lunov-divider-top opacity-90" aria-hidden />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/[0.06] to-transparent opacity-80" aria-hidden />
+
+      <div className="relative z-[1] mx-auto max-w-7xl">
+        <div className="grid gap-12 lg:grid-cols-12 lg:gap-x-14 lg:gap-y-10">
           <div className="lg:col-span-4">
             <Link
               href={`${prefix}#home`}
-              className="inline-flex items-start gap-1.5 outline-none transition-[opacity,transform] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:opacity-90 motion-safe:hover:-translate-y-px"
+              className="inline-flex items-start gap-1.5 outline-none transition-[opacity,transform] duration-[620ms] ease-[cubic-bezier(0.16,1,0.32,1)] hover:opacity-95 motion-safe:hover:-translate-y-px"
             >
               <div className="leading-none">
-                <span className="font-display flex items-center gap-1 text-lg font-bold tracking-[0.2em] text-white">
+                <span className="font-display flex items-center gap-1 text-[clamp(1.05rem,3vw,1.125rem)] font-bold tracking-[0.2em] text-white">
                   LUNO
                   <span className="relative inline-flex">
                     V
-                    <SparkleIcon className="absolute -right-3 top-0 size-3 text-lime" />
+                    <SparkleIcon className="absolute -right-3 top-0 size-3 text-lime drop-shadow-[0_0_12px_rgba(212,255,63,0.25)] sm:size-3.5" />
                   </span>
                 </span>
-                <span className="mt-1 block max-w-[16rem] text-[9px] font-medium uppercase tracking-[0.26em] text-zinc-500 sm:max-w-none sm:text-[10px] sm:tracking-[0.28em]">
+                <span className="mt-1.5 block max-w-[16rem] text-[9px] font-medium uppercase tracking-[0.26em] text-zinc-500 sm:max-w-none sm:text-[10px] sm:tracking-[0.28em]">
                   {messages.brand.subtitle}
                 </span>
               </div>
             </Link>
-            <p className="mt-7 max-w-sm text-[13px] leading-[1.72] text-zinc-500 sm:text-sm sm:leading-[1.68]">
+            <p className="mt-8 max-w-[28rem] text-[13px] leading-[1.74] text-zinc-500 sm:mt-9 sm:text-[14px] sm:leading-[1.7]">
               {footer.blurb}
-            </p>
-            <p className="mt-10 text-[11px] tracking-wide text-zinc-600">
-              © {new Date().getFullYear()} {footer.copyright}
             </p>
           </div>
 
-          <div className="grid gap-11 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-3 lg:gap-10">
+          <div className="grid gap-11 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-3 lg:gap-12">
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-600">
+              <p
+                id="footer-nav-heading"
+                className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-500"
+              >
                 {footer.navigation}
               </p>
-              <ul className="mt-6 space-y-3.5">
+              <ul className="mt-6 space-y-1 sm:space-y-1.5" aria-labelledby="footer-nav-heading">
                 {navLinks.map((l) => (
                   <li key={l.href + l.label}>
                     <Link
                       href={l.href}
-                      className="text-[13px] text-zinc-400 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-zinc-100 sm:text-sm"
+                      className="inline-flex min-h-[44px] items-center text-[13px] text-zinc-400 transition-[color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.32,1)] hover:text-zinc-100 motion-safe:hover:translate-x-0.5 sm:min-h-0 sm:text-sm"
                     >
                       {l.label}
                     </Link>
@@ -99,15 +107,18 @@ export function Footer({ locale, messages }: FooterProps) {
               </ul>
             </div>
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-600">
+              <p
+                id="footer-services-heading"
+                className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-500"
+              >
                 {footer.services}
               </p>
-              <ul className="mt-6 space-y-3.5">
+              <ul className="mt-6 space-y-1 sm:space-y-1.5" aria-labelledby="footer-services-heading">
                 {serviceLinks.map((l, i) => (
                   <li key={`${l.label}-${i}`}>
                     <Link
                       href={l.href}
-                      className="text-[13px] text-zinc-400 transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-zinc-100 sm:text-sm"
+                      className="inline-flex min-h-[44px] items-center text-left text-[13px] text-zinc-400 transition-[color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.32,1)] hover:text-zinc-100 motion-safe:hover:translate-x-0.5 sm:min-h-0 sm:text-sm"
                     >
                       {l.label}
                     </Link>
@@ -116,47 +127,39 @@ export function Footer({ locale, messages }: FooterProps) {
               </ul>
             </div>
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-zinc-600">
+              <p
+                id="footer-social-heading"
+                className="text-[11px] font-semibold uppercase tracking-[0.26em] text-zinc-500"
+              >
                 {footer.follow}
               </p>
-              <div className="mt-6 flex gap-3">
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex size-11 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.025] text-white transition-[border-color,background-color,transform] duration-[640ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-white/22 hover:bg-white/[0.055] motion-safe:hover:-translate-y-px"
-                  aria-label="Instagram"
-                >
-                  <SocialInstagram className="size-5" />
-                </a>
-                <a
-                  href="https://youtube.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex size-11 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.025] text-white transition-[border-color,background-color,transform] duration-[640ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-white/22 hover:bg-white/[0.055] motion-safe:hover:-translate-y-px"
-                  aria-label="YouTube"
-                >
-                  <SocialYoutube className="size-5" />
-                </a>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex size-11 items-center justify-center rounded-xl border border-white/[0.09] bg-white/[0.025] text-white transition-[border-color,background-color,transform] duration-[640ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-white/22 hover:bg-white/[0.055] motion-safe:hover:-translate-y-px"
-                  aria-label="LinkedIn"
-                >
-                  <SocialLinkedin className="size-5" />
-                </a>
-              </div>
+              <p id="footer-social-note" className="sr-only">
+                {footer.socialAria}
+              </p>
+              <ul
+                className="mt-6 flex flex-wrap gap-3"
+                aria-labelledby="footer-social-heading"
+                aria-describedby="footer-social-note"
+              >
+                {socialIcons.map(({ Icon, label }) => (
+                  <li key={label}>
+                    <span className="lunov-social-slot" aria-hidden title={label}>
+                      <Icon className="size-[18px]" />
+                    </span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
 
-        <div className="relative mt-14 pt-10 sm:mt-16">
-          <div className="pointer-events-none absolute inset-x-0 top-0 lunov-divider-bottom opacity-70" aria-hidden />
-          <p className="text-center text-[11px] leading-relaxed tracking-wide text-zinc-600 lg:text-right">
+        <div className="relative mt-14 flex flex-col gap-5 border-t border-white/[0.045] pt-9 sm:mt-16 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pt-10">
+          <p className="text-[11px] tracking-[0.02em] text-zinc-600">
+            © {new Date().getFullYear()} {footer.copyright}
+          </p>
+          <p className="text-[11px] leading-relaxed tracking-wide text-zinc-600 sm:text-right">
             {footer.closing}{" "}
-            <span className="text-lime/90" aria-hidden>
+            <span className="text-lime/85" aria-hidden>
               ♥
             </span>
           </p>

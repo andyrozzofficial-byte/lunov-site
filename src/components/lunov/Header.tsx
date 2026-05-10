@@ -110,14 +110,16 @@ export function Header({ locale, messages }: HeaderProps) {
               <Link
                 key={item.href}
                 href={`${prefix}${item.href}`}
-                className={`relative py-1 text-[11px] font-semibold uppercase tracking-[0.2em] transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] xl:text-xs ${
+                className={`group/nav lunov-nav-link relative py-2 text-[11px] font-semibold uppercase tracking-[0.2em] xl:text-xs ${
                   isActive ? "text-white" : "text-zinc-400 hover:text-white"
                 }`}
               >
                 {item.label}
                 <span
-                  className={`absolute -bottom-1 left-0 right-0 mx-auto h-px rounded-full bg-lime/95 shadow-[0_0_14px_rgba(212,255,63,0.28)] transition-opacity duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
-                    isActive ? "opacity-100" : "opacity-0 hover:opacity-35"
+                  className={`lunov-nav-line absolute -bottom-0.5 left-0 right-0 mx-auto h-px origin-center rounded-full bg-lime/95 shadow-[0_0_14px_rgba(212,255,63,0.26)] ${
+                    isActive
+                      ? "opacity-100 scale-x-100"
+                      : "opacity-0 scale-x-[0.28] group-hover/nav:opacity-100 group-hover/nav:scale-x-100"
                   }`}
                   aria-hidden
                 />
@@ -154,7 +156,7 @@ export function Header({ locale, messages }: HeaderProps) {
 
           <button
             type="button"
-            className="relative inline-flex size-10 items-center justify-center rounded-lg border border-white/12 text-white transition-[border-color,background-color] duration-300 hover:border-white/22 hover:bg-white/[0.035] lg:hidden"
+            className="relative inline-flex size-11 min-h-[44px] min-w-[44px] items-center justify-center rounded-lg border border-white/12 text-white transition-[border-color,background-color,transform] duration-500 ease-[cubic-bezier(0.16,1,0.32,1)] hover:border-white/22 hover:bg-white/[0.035] active:scale-[0.97] lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             onClick={() => setOpen((v) => !v)}
@@ -189,7 +191,7 @@ export function Header({ locale, messages }: HeaderProps) {
                 key={item.href}
                 href={`${prefix}${item.href}`}
                 onClick={() => setOpen(false)}
-                className={`rounded-lg border-l-2 px-3 py-3.5 text-[13px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 sm:text-sm ${
+                className={`flex min-h-[48px] items-center rounded-lg border-l-2 px-3 py-3 text-[13px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300 sm:min-h-[44px] sm:text-sm ${
                   isActive
                     ? "border-lime bg-white/[0.045] text-white"
                     : "border-transparent text-zinc-300 hover:bg-white/[0.035] hover:text-white"

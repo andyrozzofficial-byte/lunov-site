@@ -13,12 +13,42 @@
   --hero-hx: 0;
   --hero-hy: 0;
   --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
-  --section-y: clamp(4.75rem, 11vw, 8rem);
+  --ease-soft: cubic-bezier(0.16, 1, 0.32, 1);
+  --section-y: clamp(5.25rem, 11vw, 8.5rem);
 }
 
-/* Vertical rhythm — responsive section padding */
+/* Page stack — ultra-light vertical read */
+.lunov-main-stack {
+  position: relative;
+}
+
+/* Vertical rhythm — responsive section padding + ambient crown */
 .lunov-section {
+  position: relative;
   padding-block: var(--section-y);
+}
+
+.lunov-section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: min(46vh, 420px);
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 100% 62% at 50% -14%,
+    rgba(212, 255, 63, 0.045),
+    transparent 64%
+  );
+  opacity: 0.42;
+}
+
+@media (max-width: 640px) {
+  .lunov-section::before {
+    height: min(36vh, 300px);
+    opacity: 0.32;
+  }
 }
 
 /* Unified interactive surfaces */
@@ -51,8 +81,14 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: var(--header-h);
+  scroll-padding-top: calc(var(--header-h) + 0.5rem);
   text-rendering: optimizeLegibility;
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: calc(var(--header-h) + 0.35rem);
+  }
 }
 
 body {
@@ -66,6 +102,29 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .lunov-section::before {
+    opacity: 0.22;
+  }
+
+  .lunov-nav-link:hover {
+    transform: none !important;
+  }
+
+  .lunov-social-slot:hover {
+    transform: none !important;
+  }
+
+  .lunov-btn-solid:hover,
+  .lunov-btn-solid:active {
+    transform: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .lunov-project-card:hover .lunov-project-preview-wrap {
+    box-shadow: none !important;
   }
 
   .lunov-reveal {
@@ -113,10 +172,10 @@ body {
 @keyframes lunov-grain-pulse {
   0%,
   100% {
-    opacity: 0.028;
+    opacity: 0.032;
   }
   50% {
-    opacity: 0.042;
+    opacity: 0.048;
   }
 }
 
@@ -152,8 +211,8 @@ body {
 /* Section reveal */
 .lunov-reveal {
   transition-property: opacity, transform;
-  transition-duration: 820ms;
-  transition-timing-function: var(--ease-out-expo);
+  transition-duration: 900ms;
+  transition-timing-function: var(--ease-soft);
 }
 
 /* Hero dashboard micro-motion */
@@ -267,11 +326,103 @@ body {
   .lunov-btn-primary:hover::after {
     opacity: 1;
     transform: translateX(120%);
-    transition: transform 720ms var(--ease-out-expo);
+    transition: transform 780ms var(--ease-soft);
   }
 
   .lunov-btn-primary:active {
     transform: scale(0.985);
+  }
+
+  /* Lime-filled CTAs — depth without changing layout */
+  .lunov-btn-solid {
+    transition-property: transform, box-shadow, filter;
+    transition-duration: 680ms;
+    transition-timing-function: var(--ease-soft);
+  }
+
+  .lunov-btn-solid:hover {
+    transform: translateY(-1px);
+    box-shadow:
+      0 0 0 1px rgba(212, 255, 63, 0.14),
+      0 22px 52px -30px rgba(212, 255, 63, 0.38),
+      0 16px 40px -26px rgba(0, 0, 0, 0.55);
+    filter: brightness(1.035);
+  }
+
+  .lunov-btn-solid:active {
+    transform: translateY(0) scale(0.987);
+    filter: brightness(1);
+  }
+
+  /* Desktop nav — calm lift + underline bloom */
+  .lunov-nav-link {
+    transition:
+      color 420ms var(--ease-out-expo),
+      transform 520ms var(--ease-soft);
+  }
+
+  .lunov-nav-link:hover {
+    transform: translateY(-1px);
+  }
+
+  .lunov-nav-line {
+    transform-origin: center;
+    transition:
+      opacity 480ms var(--ease-soft),
+      transform 560ms var(--ease-soft),
+      box-shadow 480ms var(--ease-soft);
+  }
+
+  .lunov-nav-link:hover .lunov-nav-line {
+    opacity: 1 !important;
+    transform: scaleX(1) !important;
+    box-shadow: 0 0 18px rgba(212, 255, 63, 0.22);
+  }
+
+  /* Project preview — premium hover glow (paired with Tailwind motion-safe) */
+  .lunov-project-card:hover .lunov-project-preview-wrap {
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.06),
+      inset 0 -40px 80px -52px rgba(212, 255, 63, 0.06),
+      0 0 72px -36px rgba(212, 255, 63, 0.14);
+  }
+
+  .lunov-project-card:hover .lunov-project-shine {
+    opacity: 1;
+  }
+
+  .lunov-project-card:hover .lunov-project-rim {
+    opacity: 1;
+  }
+}
+
+/* Footer social slots — non-linked placeholders, touch-friendly */
+.lunov-social-slot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.035);
+  color: rgba(255, 255, 255, 0.82);
+  opacity: 0.82;
+  transition:
+    border-color 560ms var(--ease-out-expo),
+    background-color 560ms var(--ease-out-expo),
+    opacity 560ms var(--ease-out-expo),
+    transform 560ms var(--ease-soft),
+    box-shadow 560ms var(--ease-out-expo);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .lunov-social-slot:hover {
+    opacity: 1;
+    border-color: rgba(212, 255, 63, 0.22);
+    background: rgba(212, 255, 63, 0.06);
+    box-shadow: 0 0 28px -14px rgba(212, 255, 63, 0.28);
+    transform: translateY(-2px);
   }
 }
 

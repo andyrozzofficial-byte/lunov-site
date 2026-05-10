@@ -97,7 +97,7 @@ export function Hero({ locale, messages }: HeroProps) {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.08)_0%,transparent_38%,rgba(0,0,0,0.38)_100%)]" />
       </div>
 
-      <div className="relative mx-auto grid max-w-7xl gap-9 px-4 pt-[clamp(3.25rem,8vw,4.25rem)] pb-[clamp(4.5rem,11vw,6rem)] sm:gap-11 sm:px-6 sm:pb-[clamp(5rem,10vw,7rem)] md:grid-cols-2 md:items-center md:gap-x-10 md:gap-y-10 md:pt-[clamp(5rem,9vw,7rem)] md:pb-[clamp(5.5rem,12vw,7.5rem)] lg:gap-x-14 lg:gap-y-11 lg:pb-[clamp(6rem,11vw,8.25rem)] lg:pt-[clamp(6rem,10vw,7.5rem)] lg:px-8">
+      <div className="relative mx-auto grid max-w-7xl gap-9 px-[clamp(1rem,4vw,2rem)] pt-[clamp(3.25rem,8vw,4.25rem)] pb-[clamp(4.5rem,11vw,6rem)] sm:gap-11 sm:px-6 sm:pb-[clamp(5rem,10vw,7rem)] md:grid-cols-2 md:items-center md:gap-x-10 md:gap-y-10 md:pt-[clamp(5rem,9vw,7rem)] md:pb-[clamp(5.5rem,12vw,7.5rem)] lg:gap-x-14 lg:gap-y-11 lg:pb-[clamp(6rem,11vw,8.25rem)] lg:pt-[clamp(6rem,10vw,7.5rem)] lg:px-8">
         <div className="max-w-xl md:min-w-0">
           <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.32em] text-lime sm:mb-3.5 sm:text-xs sm:tracking-[0.35em]">
             {hero.eyebrow}
@@ -116,7 +116,7 @@ export function Hero({ locale, messages }: HeroProps) {
           <div className="mt-9 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:items-center">
             <Link
               href={`${prefix}#services`}
-              className="lunov-btn-primary group inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-lime px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.14em] text-black shadow-[0_0_48px_-14px_rgba(212,255,63,0.42)] transition-[transform,box-shadow] duration-[640ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:shadow-[0_0_56px_-10px_rgba(212,255,63,0.48)] motion-safe:hover:-translate-y-px sm:text-sm"
+              className="lunov-btn-primary lunov-btn-solid group inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full bg-lime px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.14em] text-black shadow-[0_0_48px_-14px_rgba(212,255,63,0.42)] motion-safe:hover:-translate-y-px sm:min-h-[44px] sm:text-sm"
             >
               <span className="inline-flex items-center gap-2">
                 {hero.ctaPrimary}
@@ -125,7 +125,7 @@ export function Hero({ locale, messages }: HeroProps) {
             </Link>
             <Link
               href={`${prefix}#projects`}
-              className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/[0.18] px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.14em] text-white transition-[border-color,background-color,box-shadow,transform] duration-[640ms] ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-white/30 hover:bg-white/[0.055] hover:shadow-[0_0_32px_-18px_rgba(255,255,255,0.09)] motion-safe:hover:-translate-y-px sm:text-sm"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/[0.18] px-7 py-3.5 text-[13px] font-bold uppercase tracking-[0.14em] text-white transition-[border-color,background-color,box-shadow,transform,color] duration-[680ms] ease-[cubic-bezier(0.16,1,0.32,1)] hover:border-white/28 hover:bg-white/[0.065] hover:text-white hover:shadow-[0_0_40px_-20px_rgba(212,255,63,0.12)] motion-safe:hover:-translate-y-px sm:min-h-[44px] sm:text-sm active:scale-[0.99]"
             >
               {hero.ctaSecondary}
             </Link>

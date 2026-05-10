@@ -110,6 +110,7 @@ export type Messages = {
     navigation: string;
     services: string;
     follow: string;
+    socialAria: string;
     closing: string;
     copyright: string;
   };

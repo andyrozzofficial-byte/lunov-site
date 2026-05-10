@@ -25,7 +25,7 @@ export default async function Home({ params }: Props) {
   return (
     <>
       <Header locale={locale} messages={messages} />
-      <main className="overflow-x-hidden">
+      <main className="lunov-main-stack overflow-x-hidden">
         <Hero locale={locale} messages={messages} />
         <Reveal delayMs={0}>
           <Services copy={messages.services} />

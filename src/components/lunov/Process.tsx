@@ -44,10 +44,10 @@ export function Process({ copy }: ProcessProps) {
   return (
     <section
       id="process"
-      className="lunov-section relative scroll-mt-[calc(var(--header-h)+0.75rem)] border-t border-white/[0.055] bg-black px-4 sm:scroll-mt-28 sm:px-6 lg:px-8"
+      className="lunov-section relative scroll-mt-[calc(var(--header-h)+0.75rem)] border-t border-white/[0.055] bg-black px-[clamp(1rem,4vw,2rem)] sm:scroll-mt-28 sm:px-6 lg:px-8"
       aria-labelledby="process-heading"
     >
-      <div ref={rootRef} className="mx-auto max-w-7xl">
+      <div ref={rootRef} className="relative z-[1] mx-auto max-w-7xl">
         <div className="max-w-2xl">
           <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-lime sm:text-xs sm:tracking-[0.35em]">
             {copy.eyebrow}

@@ -16,10 +16,10 @@ export function Services({ copy }: ServicesProps) {
   return (
     <section
       id="services"
-      className="lunov-section relative scroll-mt-[calc(var(--header-h)+0.75rem)] border-t border-white/[0.055] bg-black px-4 sm:scroll-mt-28 sm:px-6 lg:px-8"
+      className="lunov-section relative scroll-mt-[calc(var(--header-h)+0.75rem)] border-t border-white/[0.055] bg-black px-[clamp(1rem,4vw,2rem)] sm:scroll-mt-28 sm:px-6 lg:px-8"
       aria-labelledby="services-heading"
     >
-      <div className="mx-auto max-w-7xl">
+      <div className="relative z-[1] mx-auto max-w-7xl">
         <div className="flex flex-col gap-7 lg:flex-row lg:items-end lg:justify-between lg:gap-12">
           <div className="max-w-xl">
             <p className="text-[10px] font-bold uppercase tracking-[0.32em] text-lime sm:text-xs sm:tracking-[0.35em]">
