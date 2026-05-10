@@ -20,19 +20,19 @@ export function Hero() {
         aria-hidden
       />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 md:grid-cols-2 md:items-center md:gap-10 md:py-24 lg:gap-16 lg:py-28 lg:px-8">
-        <div className="max-w-xl">
-          <p className="mb-4 text-xs font-bold uppercase tracking-[0.35em] text-lime">
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-4 pt-16 pb-24 sm:gap-12 sm:px-6 sm:pt-20 sm:pb-28 md:grid-cols-2 md:items-center md:gap-x-12 md:gap-y-10 md:pb-32 md:pt-24 lg:gap-x-14 lg:gap-y-12 lg:pb-36 lg:pt-28 lg:px-8">
+        <div className="max-w-xl md:min-w-0">
+          <p className="mb-3 text-xs font-bold uppercase tracking-[0.35em] text-lime sm:mb-4">
             Web. Design. Systems.
           </p>
           <h1
             id="hero-heading"
-            className="font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl"
+            className="font-display text-balance text-4xl font-extrabold leading-[1.08] tracking-tight text-white sm:text-[2.35rem] sm:leading-[1.06] md:text-5xl lg:text-[2.875rem] lg:leading-[1.06] xl:text-[3.125rem]"
           >
             Digital experiences built to{" "}
             <span className="text-lime">perform.</span>
           </h1>
-          <p className="mt-6 text-base leading-relaxed text-zinc-400 sm:text-lg">
+          <p className="mt-5 max-w-[52ch] text-base leading-relaxed text-zinc-400 sm:mt-6 sm:text-lg">
             We partner with ambitious teams to ship fast, accessible interfaces
             and resilient foundations — from brand-critical marketing sites to
             product surfaces your users rely on every day.
@@ -54,7 +54,7 @@ export function Hero() {
             </Link>
           </div>
 
-          <div className="mt-12 flex items-center gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-4 sm:mt-12">
             <div className="flex -space-x-3">
               {avatars.map((a, i) => (
                 <span
@@ -71,7 +71,9 @@ export function Hero() {
           </div>
         </div>
 
-        <HeroLaptopMockup />
+        <div className="min-w-0 md:flex md:justify-end md:self-center">
+          <HeroLaptopMockup />
+        </div>
       </div>
     </section>
   );

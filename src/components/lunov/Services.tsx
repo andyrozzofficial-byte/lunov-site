@@ -36,7 +36,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="relative border-t border-white/[0.06] bg-black py-20 sm:py-24"
+      className="relative scroll-mt-[calc(72px+1rem)] border-t border-white/[0.06] bg-black pt-24 pb-20 sm:scroll-mt-28 sm:pt-28 sm:pb-24 lg:pt-32 lg:pb-24"
       aria-labelledby="services-heading"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
