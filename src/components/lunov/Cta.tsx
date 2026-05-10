@@ -1,4 +1,10 @@
 import Link from "next/link";
+import {
+  CONTACT_MAILTO_HREF,
+  CONTACT_EMAIL,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL_HREF,
+} from "@/contact";
 import type { Messages } from "@/i18n/types";
 import { ArrowRightIcon, MailIcon, PhoneIcon } from "./icons";
 
@@ -38,29 +44,29 @@ export function Cta({ copy }: CtaProps) {
 
               <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:flex-wrap sm:justify-center lg:justify-start">
                 <a
-                  href="mailto:hello@lunov.studio"
+                  href={CONTACT_MAILTO_HREF}
                   className="group/link inline-flex items-center gap-3 text-sm font-medium text-white transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-lime"
                 >
                   <span className="inline-flex rounded-lg bg-lime/[0.09] p-2 text-lime ring-1 ring-lime/22 transition-[box-shadow,ring-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/link:ring-lime/34 group-hover/link:shadow-[0_0_20px_-10px_rgba(212,255,63,0.32)]">
                     <MailIcon className="size-5" />
                   </span>
-                  hello@lunov.studio
+                  {CONTACT_EMAIL}
                 </a>
                 <a
-                  href="tel:+46701234567"
+                  href={CONTACT_PHONE_TEL_HREF}
                   className="group/link inline-flex items-center gap-3 text-sm font-medium text-white transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-lime"
                 >
                   <span className="inline-flex rounded-lg bg-lime/[0.09] p-2 text-lime ring-1 ring-lime/22 transition-[box-shadow,ring-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/link:ring-lime/34 group-hover/link:shadow-[0_0_20px_-10px_rgba(212,255,63,0.32)]">
                     <PhoneIcon className="size-5" />
                   </span>
-                  +46 70 123 45 67
+                  {CONTACT_PHONE_DISPLAY}
                 </a>
               </div>
             </div>
 
             <div className="flex justify-center lg:col-span-5 lg:justify-end">
               <Link
-                href="mailto:hello@lunov.studio"
+                href={CONTACT_MAILTO_HREF}
                 className="lunov-btn-primary lunov-btn-solid group inline-flex min-h-[48px] w-full max-w-[340px] items-center justify-center gap-2 rounded-full bg-lime px-9 py-4 text-[13px] font-bold uppercase tracking-[0.14em] text-black shadow-[0_0_44px_-12px_rgba(212,255,63,0.48)] motion-safe:hover:-translate-y-px sm:max-w-none sm:min-h-[52px] lg:w-auto lg:max-w-[280px] sm:text-sm"
               >
                 <span className="inline-flex items-center gap-2">

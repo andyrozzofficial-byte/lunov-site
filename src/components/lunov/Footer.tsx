@@ -1,7 +1,13 @@
 import Link from "next/link";
 import type { Locale } from "@/i18n/config";
+import {
+  CONTACT_EMAIL,
+  CONTACT_MAILTO_HREF,
+  CONTACT_PHONE_DISPLAY,
+  CONTACT_PHONE_TEL_HREF,
+} from "@/contact";
 import type { Messages } from "@/i18n/types";
-import { SparkleIcon } from "./icons";
+import { MailIcon, PhoneIcon, SparkleIcon } from "./icons";
 
 type FooterProps = {
   locale: Locale;
@@ -83,6 +89,26 @@ export function Footer({ locale, messages }: FooterProps) {
             <p className="mt-8 max-w-[28rem] text-[13px] leading-[1.74] text-zinc-500 sm:mt-9 sm:text-[14px] sm:leading-[1.7]">
               {footer.blurb}
             </p>
+            <div className="mt-8 flex flex-col gap-4 sm:mt-9">
+              <a
+                href={CONTACT_MAILTO_HREF}
+                className="group/link inline-flex min-h-[44px] items-center gap-3 text-sm font-medium text-white transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-lime sm:min-h-0"
+              >
+                <span className="inline-flex shrink-0 rounded-lg bg-lime/[0.09] p-2 text-lime ring-1 ring-lime/22 transition-[box-shadow,ring-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/link:ring-lime/34 group-hover/link:shadow-[0_0_20px_-10px_rgba(212,255,63,0.32)]">
+                  <MailIcon className="size-5" />
+                </span>
+                {CONTACT_EMAIL}
+              </a>
+              <a
+                href={CONTACT_PHONE_TEL_HREF}
+                className="group/link inline-flex min-h-[44px] items-center gap-3 text-sm font-medium text-white transition-colors duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] hover:text-lime sm:min-h-0"
+              >
+                <span className="inline-flex shrink-0 rounded-lg bg-lime/[0.09] p-2 text-lime ring-1 ring-lime/22 transition-[box-shadow,ring-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/link:ring-lime/34 group-hover/link:shadow-[0_0_20px_-10px_rgba(212,255,63,0.32)]">
+                  <PhoneIcon className="size-5" />
+                </span>
+                {CONTACT_PHONE_DISPLAY}
+              </a>
+            </div>
           </div>
 
           <div className="grid gap-11 sm:grid-cols-3 lg:col-span-8 lg:grid-cols-3 lg:gap-12">
