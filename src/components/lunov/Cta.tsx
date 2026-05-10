@@ -1,0 +1,71 @@
+import Link from "next/link";
+import { ArrowRightIcon, MailIcon, PhoneIcon } from "./icons";
+
+export function Cta() {
+  return (
+    <section
+      id="contact"
+      className="relative border-t border-white/[0.06] bg-black py-20 sm:py-24"
+      aria-labelledby="cta-heading"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-gradient-to-br from-zinc-900/90 via-[#111111] to-black px-6 py-14 shadow-[0_0_80px_-40px_rgba(212,255,63,0.25)] sm:px-12 sm:py-16 lg:px-16">
+          <div
+            className="pointer-events-none absolute -right-24 top-1/2 size-[420px] -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(212,255,63,0.12),transparent_65%)]"
+            aria-hidden
+          />
+
+          <div className="relative grid gap-10 lg:grid-cols-12 lg:gap-12 lg:items-center">
+            <div className="lg:col-span-7">
+              <p className="text-xs font-bold uppercase tracking-[0.35em] text-lime">
+                Ready to build something great?
+              </p>
+              <h2
+                id="cta-heading"
+                className="font-display mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl"
+              >
+                Let&apos;s create something amazing.
+              </h2>
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-zinc-400">
+                Have an idea or a project in mind? Tell us what you&apos;re
+                aiming for — timeline, audience, and success metrics — and
+                we&apos;ll propose a focused path forward.
+              </p>
+
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+                <a
+                  href="mailto:hello@lunov.studio"
+                  className="inline-flex items-center gap-3 text-sm font-medium text-white transition hover:text-lime"
+                >
+                  <span className="inline-flex rounded-lg bg-lime/10 p-2 text-lime ring-1 ring-lime/25">
+                    <MailIcon className="size-5" />
+                  </span>
+                  hello@lunov.studio
+                </a>
+                <a
+                  href="tel:+46701234567"
+                  className="inline-flex items-center gap-3 text-sm font-medium text-white transition hover:text-lime"
+                >
+                  <span className="inline-flex rounded-lg bg-lime/10 p-2 text-lime ring-1 ring-lime/25">
+                    <PhoneIcon className="size-5" />
+                  </span>
+                  +46 70 123 45 67
+                </a>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 lg:flex lg:justify-end">
+              <Link
+                href="mailto:hello@lunov.studio"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-lime px-8 py-4 text-sm font-bold uppercase tracking-[0.14em] text-black shadow-[0_0_40px_-8px_rgba(212,255,63,0.55)] transition hover:scale-[1.02] hover:brightness-105 sm:w-auto"
+              >
+                Get in touch
+                <ArrowRightIcon className="size-4" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
