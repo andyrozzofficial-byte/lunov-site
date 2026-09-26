@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1789968530185,
+      "tag": "0000_green_sunfire",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1789969843000,
+      "tag": "0001_waiting_resolved",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1789970100000,
+      "tag": "0002_cost_paid_by",
+      "breakpoints": true
+    }
+  ]
+}

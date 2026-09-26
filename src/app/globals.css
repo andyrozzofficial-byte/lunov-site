@@ -435,3 +435,56 @@ body {
   transition: opacity 0.85s var(--ease-out-expo), transform 0.85s
     var(--ease-out-expo);
 }
+
+/* Command Center */
+.cc-shell {
+  --cc-sidebar-w: 220px;
+}
+
+.cc-card {
+  transition:
+    border-color 480ms var(--ease-out-expo),
+    box-shadow 480ms var(--ease-out-expo);
+}
+
+.cc-card:hover {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.cc-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.cc-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cc-inbox {
+  z-index: 30;
+}
+
+.cc-input {
+  width: 100%;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  background: var(--background);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--foreground);
+}
+
+.cc-input:focus {
+  border-color: rgba(212, 255, 63, 0.4);
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(212, 255, 63, 0.2);
+}
+
+@media (max-width: 768px) {
+  .cc-sidebar {
+    display: none;
+  }
+}

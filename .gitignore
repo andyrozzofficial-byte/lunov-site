@@ -20,6 +20,9 @@
 # production
 /build
 
+# command center database
+/data/
+
 # misc
 .DS_Store
 *.pem
